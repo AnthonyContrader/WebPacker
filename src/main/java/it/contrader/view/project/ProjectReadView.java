@@ -25,7 +25,7 @@ public class ProjectReadView extends AbstractView{
 	@Override
 	public void showResults(Request request) {
 		if (request != null) {
-			ProjectDTO project = (ProjectDTO) request.get("project");
+			ProjectDTO project = (ProjectDTO) request.get("projectname");
 			System.out.println(project);
 			MainDispatcher.getInstance().callView("Project", null);
 		}
@@ -47,7 +47,7 @@ public class ProjectReadView extends AbstractView{
 	@Override
 	public void submit() {
 		request = new Request();
-		request.put("id", id);
+		request.put("projectid", id);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Project", "doControl", request);
 	}

@@ -30,9 +30,11 @@ public class ProjectDAO {
 				int projectid = resultSet.getInt("projectid");
 				int userid = resultSet.getInt("userid");
 				String projectname = resultSet.getString("projectname");
+				
 				progetto = new Project(userid, projectname);
 				progetto.setProjectid(projectid);
 				projectList.add(progetto);
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -71,7 +73,7 @@ public class ProjectDAO {
 			projectname = resultSet.getString("projectname");
 			Project progetto = new Project(userid, projectname);
 			progetto.setProjectid(resultSet.getInt("projectid"));
-
+			
 			return progetto;
 		} catch (SQLException e) {
 			return null;

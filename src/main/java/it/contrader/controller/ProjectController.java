@@ -42,11 +42,11 @@ public class ProjectController implements Controller{
 			// Arriva qui dalla ProjectInsertView. Estrae i parametri da inserire e chiama il service per inserire un project con questi parametri
 		case "INSERT":
 			projectName = request.get("projectname").toString();
-			userId = Integer.parseInt(request.get("uderid").toString());
-			projectId = Integer.parseInt(request.get("projectid").toString());
-				
+			userId = Integer.parseInt(request.get("userid").toString());
+			//projectId = Integer.parseInt(request.get("projectid").toString());
+			
 			//costruisce l'oggetto project da inserire
-			ProjectDTO projectToInsert = new ProjectDTO(projectId, userId, projectName);
+			ProjectDTO projectToInsert = new ProjectDTO(userId, projectName);
 			//invoca il service
 			projectService.insert(projectToInsert);
 			request = new Request();
@@ -57,7 +57,7 @@ public class ProjectController implements Controller{
 			
 		// Arriva qui dalla ProjectDeleteView. Estrae l'id del progetto da cancellare e lo passa al Service
 		case "DELETE":
-			projectId = Integer.parseInt(request.get("id").toString());
+			projectId = Integer.parseInt(request.get("projectid").toString());
 			//Qui chiama il service
 			projectService.delete(projectId);
 			request = new Request();
@@ -67,10 +67,12 @@ public class ProjectController implements Controller{
 			
 		case "PROJECTLIST":
 			List<ProjectDTO> projectsDTO = projectService.getAll();
+			System.out.println("PROGETTI: "+projectsDTO);
 			//Impacchetta la request con la lista dei project
-			if (projectsDTO.size()==0) {
+			if (projectsDTO.size()==0)
 				request = null;
-			}
+			else
+				request.put("project", projectsDTO);
 			MainDispatcher.getInstance().callView("Project", request);
 			break;
 			//Esegue uno switch sulla base del comando inserito dall'utente e reindirizza tramite il Dispatcher alla View specifica per ogni operazione

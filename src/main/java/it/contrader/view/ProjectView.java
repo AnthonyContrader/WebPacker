@@ -20,6 +20,7 @@ public class ProjectView extends AbstractView{
 	 */
 	@Override
 	public void showResults(Request request) {
+		
 		if (request != null) {
 			System.out.println("\n------------------- Gestione progetti ----------------\n");
 			System.out.println("ID_Progetto\\ID_Utente\\ID_NomeProgetto");
@@ -31,8 +32,6 @@ public class ProjectView extends AbstractView{
 				System.out.println(u);
 			System.out.println();
 		}
-		else
-			System.out.println("LA LISTA E' VUOTA");
 	}
 
 	/**
