@@ -37,7 +37,7 @@ public class HomeAdminView extends AbstractView {
         System.out.println("[U]tenti  [E]sci");
         //Il metodo che salva l'input nella stringa choice.
         //getInput() è definito in AbstractView.
-        choice = this.getInput();
+        choice = this.getInput().toUpperCase();
     }
 
     /**
@@ -48,12 +48,12 @@ public class HomeAdminView extends AbstractView {
     	//crea una nuova Request (vedi classe Request)
     	request = new Request();
         switch (choice) {
-        case "u":
+        case "U":
         	this.request.put("mode", "USERLIST");
         	MainDispatcher.getInstance().callAction("User", "doControl", request);
         	break;
  
-        case "e":
+        case "E":
         	MainDispatcher.getInstance().callAction("Login", "doControl", null);
         	break;
         default:

@@ -11,9 +11,9 @@ package it.contrader.dto;
  */
 public class ProjectDTO {
 	
-	private String projectid;
+	private int projectid;
 	
-	private String userid;
+	private int userid;
 	
 	private String projectname;
 
@@ -22,13 +22,12 @@ public class ProjectDTO {
 		
 	}
 
-	public ProjectDTO (String projectid, String userid, String projectname) {
-		this.projectid = projectid;
+	public ProjectDTO (int userid, String projectname) {
 		this.userid = userid;
 		this.projectname = projectname;
 	}
 
-	public ProjectDTO (String projectid, String userid, String usertype) {
+	public ProjectDTO (int projectid, int userid, String projectname) {
 		this.projectid = projectid;
 		this.userid = userid;
 		this.projectname = projectname;
@@ -43,24 +42,24 @@ public class ProjectDTO {
 	}
 
 
-	public String getUserid() {
-		return this.Userdid;
+	public int getUserid() {
+		return this.userid;
 	}
 
-	public void setUserid(String userid) {
+	public void setUserid(int userid) {
 		this.userid = userid;
 	}
 
-	public void setProjectid(String projectid) {
+	public void setProjectid(int projectid) {
 		this.projectid = projectid;
 	}
 
-	public String getProjectid() {
+	public int getProjectid() {
 		return projectid;
 	}
 
 	@Override
 	public String toString() {
-	       "\t"  + projectid +"\t\t" +   userid + "\t\t" + projectname;
+	       return "\t"  + projectid +"\t\t" +   userid + "\t\t" + projectname;
 	}
 }

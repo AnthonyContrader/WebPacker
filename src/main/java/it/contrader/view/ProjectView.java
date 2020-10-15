@@ -6,7 +6,7 @@ import it.contrader.controller.Request;
 import it.contrader.dto.ProjectDTO;
 import it.contrader.main.MainDispatcher;
 
-public class ProjectView {
+public class ProjectView extends AbstractView{
 
 	private Request request;
 	private String choice;
@@ -31,6 +31,8 @@ public class ProjectView {
 				System.out.println(u);
 			System.out.println();
 		}
+		else
+			System.out.println("LA LISTA E' VUOTA");
 	}
 
 	/**
