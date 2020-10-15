@@ -13,4 +13,5 @@ public abstract class AbstractView implements View {
 		scanner = new Scanner(System.in);
 		return scanner.nextLine();
 	}
+	
 }
