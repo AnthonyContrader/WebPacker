@@ -9,7 +9,7 @@ import it.contrader.service.ProjectService;
 
 public class ProjectController implements Controller{
 	/**
-	 * definisce il pacchetto di vista user.
+	 * definisce il pacchetto di vista project.
 	 */
 	private static String sub_package = "project.";
 	
@@ -27,13 +27,13 @@ public class ProjectController implements Controller{
 		String choice = (String) request.get("choice");
 		
 		int projectId;
-		int uderId;
+		int userId;
 		String projectName;
 		
 		switch(mode) {
 		// Arriva qui dalla ProjectReadView. Invoca il Service con il parametro id e invia alla ProjectReadView un project da mostrare 
 		case "READ":
-			uderId = Integer.parseInt(request.get("projectId").toString());
+			projectId = Integer.parseInt(request.get("projectid").toString());
 			ProjectDTO projectDTO = projectService.read(projectId);
 			request.put("projectname", projectDTO);
 			MainDispatcher.getInstance().callView(sub_package + "ProjectRead", request);
@@ -42,13 +42,13 @@ public class ProjectController implements Controller{
 			// Arriva qui dalla ProjectInsertView. Estrae i parametri da inserire e chiama il service per inserire un project con questi parametri
 		case "INSERT":
 			projectName = request.get("projectname").toString();
-			uderId = Integer.parseInt(request.get("uderid").toString());
+			userId = Integer.parseInt(request.get("uderid").toString());
 			projectId = Integer.parseInt(request.get("projectid").toString());
 				
 			//costruisce l'oggetto project da inserire
 			ProjectDTO projectToInsert = new ProjectDTO(projectId, userId, projectName);
 			//invoca il service
-			ProjectService.insert(projectToInsert);
+			projectService.insert(projectToInsert);
 			request = new Request();
 			request.put("mode", "mode");
 			//Rimanda alla view con la risposta
@@ -59,7 +59,7 @@ public class ProjectController implements Controller{
 		case "DELETE":
 			projectId = Integer.parseInt(request.get("id").toString());
 			//Qui chiama il service
-			ProjectService.delete(projectId);
+			projectService.delete(projectId);
 			request = new Request();
 			request.put("mode", "mode");
 			MainDispatcher.getInstance().callView(sub_package + "ProjectDelete", request);
@@ -68,7 +68,9 @@ public class ProjectController implements Controller{
 		case "PROJECTLIST":
 			List<ProjectDTO> projectsDTO = projectService.getAll();
 			//Impacchetta la request con la lista dei project
-			request.put("projects", projectsDTO);
+			if (projectsDTO.size()==0) {
+				request = null;
+			}
 			MainDispatcher.getInstance().callView("Project", request);
 			break;
 			//Esegue uno switch sulla base del comando inserito dall'utente e reindirizza tramite il Dispatcher alla View specifica per ogni operazione

@@ -3,20 +3,6 @@ package it.contrader.converter;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-import it.contrader.dto.UserDTO;
-import it.contrader.model.User;
-
-
-public class ProjectConverter   {
-	
-	/**
-	 * Crea un oggetto di tipo ProjectDTO e lo riempie con i campi del parametro user di tipo Project.
-	 * Notare l'uso del metodo get() per ottenere il valore dell'attributo-
-	 */
-	public ProjectDTO toDTO(Project project) {
-		ProjectDTO projectDTO = new ProjectDTO(project.getProjectId(), project.getUserId(), project.getProjectName());
-=======
 import it.contrader.dto.ProjectDTO;
 import it.contrader.model.Project;
 
@@ -33,26 +19,16 @@ public class ProjectConverter   {
 	 */
 	public ProjectDTO toDTO(Project project) {
 		ProjectDTO projectDTO = new ProjectDTO(project.getProjectid(), project.getUserid(),project.getProjectname());
->>>>>>> bdc958bcaa7c914cf869fd5ec1c7842f7e00bb39
 		return projectDTO;
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Crea un oggetto di tipo Project e lo riempie con i campi del parametro user di tipo ProjectDTO.
 	 * Notare l'uso del metodo get() per ottenere il valore dell'attributo-
 	 */
 	public Project toEntity(ProjectDTO projectDTO) {
-		Project projectDTO = new User(projectDTO.getProjectId(), projectDTO.getUserId(), projectDTO.getProjectName());
-		return projectDTO;
-=======
-	 * Crea un oggetto di tipo Project e lo riempie con i campi del parametro project di tipo ProjectDTO.
-	 * Notare l'uso del metodo get() per ottenere il valore dell'attributo-
-	 */
-	public Project toEntity(ProjectDTO projectDTO) {
-		Project project = new Project(project.getProjectid(), project.getUserid(),project.getProjectname());
+		Project project = new Project(projectDTO.getProjectid(), projectDTO.getUserid(),projectDTO.getProjectname());
 		return project;
->>>>>>> bdc958bcaa7c914cf869fd5ec1c7842f7e00bb39
 	}
 	
 	/**
@@ -72,9 +48,5 @@ public class ProjectConverter   {
 	}
 
 	
-	
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> bdc958bcaa7c914cf869fd5ec1c7842f7e00bb39
+

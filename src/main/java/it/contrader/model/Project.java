@@ -8,9 +8,9 @@ public class Project {
 	 * Qui sotto definisco gli attributi di Project. 
 	 */
 
-	private String projectid;
+	private int projectid;
 	
-	private String userid;
+	private int userid;
 	
 	private String projectname;
 
@@ -21,18 +21,17 @@ public class Project {
 		
 	}
 
-	public Project (String projectid, String userid, String projectname) {
+	public Project (int userid, String projectname) {
+		this.userid = userid;
+		this.projectname = projectname;
+	}
+	
+	public Project (int projectid, int userid, String projectname) {
 		this.projectid = projectid;
 		this.userid = userid;
 		this.projectname = projectname;
 	}
-
-	public Project ( String projectid, String userid, String projectname) {
-		this.username = projectid;
-		this.password = userid;
-		this.usertype = projectname;
-	}
-
+	
 	/**
 	 * Getter e Setter: servono alle altre classi a recuperare e modificare gli attributi di project
 	 */
@@ -46,26 +45,26 @@ public class Project {
 	}
 
 
-	public String getUserid() {
+	public int getUserid() {
 		return this.userid;
 	}
 
-	public void setUserid(String userid) {
+	public void setUserid(int userid) {
 		this.userid = userid;
 	}
 
-	public void setProjectid(String projectid) {
+	public void setProjectid(int projectid) {
 		this.projectid = projectid;
 	}
 
-	public String getProjectid() {
+	public int getProjectid() {
 		return projectid;
 	}
 
 	//Trasforma un oggetto in una stringa
 	@Override
 	public String toString() {
-		"\t"  + projectid +"\t\t" +   userid + "\t\t" + projectname;
+		return projectid + "\t\t" +   userid + "\t\t" + projectname;
 	}
 
 	//Metodo per il confronto degli oggetti
@@ -77,17 +76,12 @@ public class Project {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (Project) obj;
+		Project other = (Project) obj;
 		
-		if (userid == null) {
-			if (other.userid != null)
-				return false;
-		} else if (!userid.equals(other.userid))
+		if (userid != other.userid) {
 			return false;
-		if (projectid == null) {
-			if (other.projectid != null)
-				return false;
-		} else if (!projectid.equals(other.projectid))
+		}
+		if (projectid != other.projectid)
 			return false;
 		if (projectname == null) {
 			if (other.projectname != null)

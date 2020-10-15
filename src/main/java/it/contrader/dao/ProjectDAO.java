@@ -28,10 +28,10 @@ public class ProjectDAO {
 			Project progetto;
 			while (resultSet.next()) {
 				int projectid = resultSet.getInt("projectid");
-				String userid = resultSet.getString("userid");
+				int userid = resultSet.getInt("userid");
 				String projectname = resultSet.getString("projectname");
 				progetto = new Project(userid, projectname);
-				progetto.setId(projectid);
+				progetto.setProjectid(projectid);
 				projectList.add(progetto);
 			}
 		} catch (SQLException e) {
@@ -45,7 +45,7 @@ public class ProjectDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setString(1, projectToInsert.getUserid());
+			preparedStatement.setInt(1, projectToInsert.getUserid());
 			preparedStatement.setString(2, projectToInsert.getProjectname());
 			preparedStatement.execute();
 			return true;
@@ -64,9 +64,10 @@ public class ProjectDAO {
 			preparedStatement.setInt(1, projectId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			String userid,projectname;
+			String projectname;
+			int userid;
 
-			userid = resultSet.getString("userid");
+			userid = resultSet.getInt("userid");
 			projectname = resultSet.getString("projectname");
 			Project progetto = new Project(userid, projectname);
 			progetto.setProjectid(resultSet.getInt("projectid"));
