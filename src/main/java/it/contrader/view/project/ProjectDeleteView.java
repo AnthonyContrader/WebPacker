@@ -20,7 +20,7 @@ public class ProjectDeleteView extends AbstractView {
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Cancellazione andata a buon fine.\n");
-			MainDispatcher.getInstance().callView("User", null);
+			MainDispatcher.getInstance().callView("Project", null);
 		}
 	}
 
@@ -29,7 +29,7 @@ public class ProjectDeleteView extends AbstractView {
 	 */
 	@Override
 	public void showOptions() {
-			System.out.println("Inserisci projectid dell'utente:");
+			System.out.println("Inserisci Id del progetto:");
 			projectid = Integer.parseInt(getInput());
 
 	}
@@ -42,7 +42,7 @@ public class ProjectDeleteView extends AbstractView {
 		request = new Request();
 		request.put("projectid", projectid);
 		request.put("mode", mode);
-		MainDispatcher.getInstance().callAction("User", "doControl", request);
+		MainDispatcher.getInstance().callAction("Project", "doControl", request);
 	}
 
 
