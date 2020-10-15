@@ -3,10 +3,6 @@ package it.contrader.converter;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 2a65ed25c28c5195b84a209a04b85bacf4405edf
 import it.contrader.dto.ProjectDTO;
 import it.contrader.model.Project;
 
@@ -18,14 +14,6 @@ public class ProjectConverter   {
 	 * Notare l'uso del metodo get() per ottenere il valore dell'attributo-
 	 */
 	public ProjectDTO toDTO(Project project) {
-<<<<<<< HEAD
-		ProjectDTO projectDTO = new ProjectDTO(project.getProjectId(), project.getUserId(), project.getProjectName());
-		return projectDTO;
-	}
-
-
-	
-=======
 		ProjectDTO projectDTO = new ProjectDTO(project.getProjectid(), project.getUserid(),project.getProjectname());
 		return projectDTO;
 	}
@@ -34,7 +22,7 @@ public class ProjectConverter   {
 	 * Crea un oggetto di tipo Project e lo riempie con i campi del parametro user di tipo ProjectDTO.
 	 * Notare l'uso del metodo get() per ottenere il valore dell'attributo-
 	 */
->>>>>>> 2a65ed25c28c5195b84a209a04b85bacf4405edf
+
 	public Project toEntity(ProjectDTO projectDTO) {
 		Project project = new Project(projectDTO.getProjectid(), projectDTO.getUserid(),projectDTO.getProjectname());
 		return project;
@@ -55,12 +43,7 @@ public class ProjectConverter   {
 		}
 		return projectDTOList;
 	}
-<<<<<<< HEAD
-	
-}
-=======
 
 	
 }
 
->>>>>>> 2a65ed25c28c5195b84a209a04b85bacf4405edf

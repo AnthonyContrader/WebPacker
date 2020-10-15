@@ -1,15 +1,15 @@
-package it.contrader.view.user;
+package it.contrader.view.project;
 
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 import it.contrader.view.AbstractView;
 
-public class UserDeleteView extends AbstractView {
+public class ProjectDeleteView extends AbstractView {
 	private Request request;
     private int projectid;
 	private final String mode = "DELETE";
 
-	public UserDeleteView() {
+	public ProjectDeleteView() {
 	}
 
 	/**
