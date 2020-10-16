@@ -23,7 +23,7 @@ public class ProjectView extends AbstractView{
 		
 		if (request != null) {
 			System.out.println("\n------------------- Gestione progetti ----------------\n");
-			System.out.println("ID_Progetto\\ID_Utente\\ID_NomeProgetto");
+			System.out.println("ID_Progetto\tID_Utente\tID_NomeProgetto");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")

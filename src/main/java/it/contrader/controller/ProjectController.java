@@ -67,7 +67,7 @@ public class ProjectController implements Controller{
 			
 		case "PROJECTLIST":
 			List<ProjectDTO> projectsDTO = projectService.getAll();
-			System.out.println("PROGETTI: "+projectsDTO);
+			
 			//Impacchetta la request con la lista dei project
 			if (projectsDTO.size()==0)
 				request = null;
