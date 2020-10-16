@@ -52,7 +52,7 @@ public class ProjectController implements Controller{
 			projectService.insert(projectToInsert);
 			List listaProgetti = projectService.getAll();
 			request = new Request();
-			request.put("projectid",listaProgetti.size());
+			request.put("projectid",((ProjectDTO) listaProgetti.get(listaProgetti.size()-1)).getProjectid());
 			//Rimanda alla view con la risposta
 			MainDispatcher.getInstance().callView(sub_package + "ProjectInsert", request);
 			break;

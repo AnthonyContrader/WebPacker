@@ -19,8 +19,12 @@ public class HomeUserView extends AbstractView{
 	public void showOptions() {
 		System.out.println("-------------MENU------------\n");
 		System.out.println("Seleziona cosa vuoi fare");
-		System.out.println("\n [A]ggiungi progetto [E]sci");
+		System.out.println("\n [G]estisci progetto [E]sci");
 		choice = this.getInput().toUpperCase();
+		while(!choice.equals("G") && !choice.equals("E") ) {
+			System.out.println("Errore inserisci: G, E\n");
+			choice = getInput().toUpperCase();
+		}
 
 	}
 
@@ -29,7 +33,7 @@ public class HomeUserView extends AbstractView{
 		
 		request = new Request();
 		switch (choice) {
-		case "A":
+		case "G":
         	this.request.put("mode", "PROJECTLIST");
         	MainDispatcher.getInstance().callAction("Project", "doControl", request);
         	break;

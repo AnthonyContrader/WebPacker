@@ -38,6 +38,10 @@ public class HomeAdminView extends AbstractView {
         //Il metodo che salva l'input nella stringa choice.
         //getInput() è definito in AbstractView.
         choice = this.getInput().toUpperCase();
+        while(!choice.equals("U") && !choice.equals("G") && !choice.equals("E") ) {
+			System.out.println("Errore inserisci: U, G, E\n");
+			choice = getInput().toUpperCase();
+		}
     }
 
     /**
