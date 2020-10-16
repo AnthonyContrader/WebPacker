@@ -11,8 +11,8 @@ public class HomeUserView extends AbstractView{
 
 	@Override
 	public void showResults(Request request) {
-		System.out.println("\n Benvenuto " + request.get("username").toString() + "! Siamo in work in progress, ma puoi già fare cose!\n");
-
+		if(request != null)
+			System.out.println("\n Benvenuto " + request.get("username").toString() + "! Siamo in work in progress, ma puoi già fare cose!\n");
 	}
 
 	@Override

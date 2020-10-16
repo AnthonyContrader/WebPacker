@@ -37,7 +37,12 @@ public class UserInsertView extends AbstractView{
 			System.out.println("Inserisci password dell'utente:");
 			password = getInput();
 			System.out.println("Inserisci tipo dell'utente:");
-			usertype = getInput();
+			usertype = getInput().toUpperCase();
+			while(!usertype.equals("ADMIN") && !usertype.equals("USER")) {
+				System.out.println("000000    "+ usertype);
+				System.out.println("Errore inserisci: \"ADMIN\" oppure \"USER\"");
+				usertype = getInput().toUpperCase();
+			}
 	}
 
 	/**

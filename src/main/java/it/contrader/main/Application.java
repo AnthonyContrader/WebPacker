@@ -9,7 +9,8 @@ package it.contrader.main;
  * Per ulteriori dettagli GUIDA SEZIONE 1.
 */
 public class Application {
-
+	public static Integer id_Utente;
+	public static String tipo_Utente;
     public static void main(String[] args) {
         MainDispatcher.getInstance().callAction("Login", "doControl", null);
     }

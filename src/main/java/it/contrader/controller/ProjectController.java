@@ -3,6 +3,7 @@ package it.contrader.controller;
 import java.util.List;
 
 import it.contrader.dto.ProjectDTO;
+import it.contrader.main.Application;
 import it.contrader.main.MainDispatcher;
 import it.contrader.service.ProjectService;
 
@@ -49,8 +50,9 @@ public class ProjectController implements Controller{
 			ProjectDTO projectToInsert = new ProjectDTO(userId, projectName);
 			//invoca il service
 			projectService.insert(projectToInsert);
+			List listaProgetti = projectService.getAll();
 			request = new Request();
-			request.put("mode", "mode");
+			request.put("projectid",listaProgetti.size());
 			//Rimanda alla view con la risposta
 			MainDispatcher.getInstance().callView(sub_package + "ProjectInsert", request);
 			break;
@@ -100,11 +102,15 @@ public class ProjectController implements Controller{
 					break;
 
 				case "B":
-					MainDispatcher.getInstance().callView("HomeUser", null);
+					if(Application.tipo_Utente.equals("USER") ) 
+						MainDispatcher.getInstance().callView("HomeUser", null);
+					else
+						MainDispatcher.getInstance().callView("HomeAdmin", null);
 					break;
 					
 				default:
-					MainDispatcher.getInstance().callView("Login", null);
+					System.out.println("\t\t!Opzione sbagliata!");
+					MainDispatcher.getInstance().callView("Project", null);
 				}
 				
 			default:

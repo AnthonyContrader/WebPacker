@@ -1,6 +1,7 @@
 package it.contrader.view.project;
 
 import it.contrader.controller.Request;
+import it.contrader.main.Application;
 import it.contrader.main.MainDispatcher;
 import it.contrader.view.AbstractView;
 
@@ -24,6 +25,7 @@ public class ProjectInsertView extends AbstractView {
 	public void showResults(Request request) {
 		if (request != null) {
 			System.out.println("Inserimento andato a buon fine.\n");
+			System.out.println("ID progetto inserito: "+ request.get("projectid").toString());
 			MainDispatcher.getInstance().callView("Project", null);
 		}
 	}
@@ -33,9 +35,7 @@ public class ProjectInsertView extends AbstractView {
 	 */
 	@Override
 	public void showOptions() {
-		System.out.println("Inserisci userid dell'utente:");
-		String id = getInput();
-		userid = Integer.parseInt(id);
+		
 		System.out.println("Inserisci il nome del progetto:");
 		projectname = getInput();
 
@@ -47,7 +47,7 @@ public class ProjectInsertView extends AbstractView {
 	@Override
 	public void submit() {
 		request = new Request();
-		request.put("userid", userid);
+		request.put("userid", Application.id_Utente);
 		request.put("projectname", projectname);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Project", "doControl", request);

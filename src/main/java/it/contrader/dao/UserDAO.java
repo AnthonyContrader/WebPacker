@@ -52,7 +52,7 @@ public class UserDAO {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, userToInsert.getUsername());
 			preparedStatement.setString(2, userToInsert.getPassword());
-			preparedStatement.setString(3, userToInsert.getUsertype());
+			preparedStatement.setString(3, userToInsert.getUsertype().toUpperCase());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {

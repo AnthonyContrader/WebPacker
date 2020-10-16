@@ -1,5 +1,6 @@
 package it.contrader.controller;
 
+import it.contrader.main.Application;
 import it.contrader.main.MainDispatcher;
 import it.contrader.service.LoginService;
 
@@ -22,7 +23,7 @@ public class HomeController implements Controller {
 			
 			String username = request.get("username").toString();
 			String password = request.get("password").toString();
-
+			
 			// Qui invoca il Login Service
 			String usertype= loginService.login(username, password);
 

@@ -3,6 +3,7 @@ package it.contrader.view.project;
 import it.contrader.controller.Request;
 
 import it.contrader.dto.ProjectDTO;
+import it.contrader.main.Application;
 import it.contrader.main.MainDispatcher;
 import it.contrader.view.AbstractView;
 
@@ -13,7 +14,7 @@ public class ProjectReadView extends AbstractView{
 
 	public ProjectReadView() {
 	}
-
+	
 	/**
 	 * Se la request è null (ovvero quando arriva dal controller con mode GETCHOICE e choice L 
 	 * il metodo è vuoto.
@@ -26,6 +27,7 @@ public class ProjectReadView extends AbstractView{
 	public void showResults(Request request) {
 		if (request != null) {
 			ProjectDTO project = (ProjectDTO) request.get("projectname");
+			System.out.println("ID_Progetto\tID_Utente\tID_NomeProgetto");
 			System.out.println(project);
 			MainDispatcher.getInstance().callView("Project", null);
 		}
