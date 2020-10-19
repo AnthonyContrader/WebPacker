@@ -24,6 +24,11 @@ public class LoginDAO {
 
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
+			
+			if(connection == null)
+				System.out.println("NON CONNESSO");
+			else
+				System.out.println("CONNESSO");
 			PreparedStatement statement = connection.prepareStatement(QUERY_LOGIN);
 			
 			statement.setString(1, username);
