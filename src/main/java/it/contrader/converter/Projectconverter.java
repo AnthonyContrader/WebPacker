@@ -33,7 +33,7 @@ public class ProjectConverter  implements Converter<Project, ProjectDTO> {
 	 * Metodo per convertire le liste di Project.
 	 */
 	@Override
-	public List<ProjectDTO> toDTOList(List<User> projectList) {
+	public List<ProjectDTO> toDTOList(List<Project> projectList) {
 		//Crea una lista vuota.
 		List<ProjectDTO> projectDTOList = new ArrayList<ProjectDTO>();
 		
