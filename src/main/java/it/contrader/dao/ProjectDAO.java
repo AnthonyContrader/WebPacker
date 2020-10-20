@@ -66,7 +66,7 @@ public class ProjectDAO implements DAO<Project> {
 			int userid;
 			String projectname;
 
-			userid = resultSet.getInt("projectid");
+			userid = resultSet.getInt("userid");
 			projectname = resultSet.getString("projectname");
 			Project project = new Project(userid, projectname);
 			project.setProjectid(resultSet.getInt("projectid"));

@@ -15,7 +15,7 @@ public class ProjectConverter  implements Converter<Project, ProjectDTO> {
 	 */
 	@Override
 	public ProjectDTO toDTO(Project project) {
-		ProjectDTO projectDTO = new ProjectDTO(project.getProjectd(), project.getUserid(), project.getProjectname());
+		ProjectDTO projectDTO = new ProjectDTO(project.getProjectid(), project.getUserid(), project.getProjectname());
 		return projectDTO;
 	}
 
@@ -25,7 +25,7 @@ public class ProjectConverter  implements Converter<Project, ProjectDTO> {
 	 */
 	@Override
 	public Project toEntity(ProjectDTO projectDTO) {
-		Project project = new Project(projectDTO.getProjectd(), project.getUserid(), project.getProjectname());
+		Project project = new Project(projectDTO.getProjectid(), projectDTO.getUserid(), projectDTO.getProjectname());
 		return project;
 	}
 	
@@ -33,7 +33,7 @@ public class ProjectConverter  implements Converter<Project, ProjectDTO> {
 	 * Metodo per convertire le liste di Project.
 	 */
 	@Override
-	public List<ProjectDTO> toDTOList(List<User> projectList) {
+	public List<ProjectDTO> toDTOList(List<Project> projectList) {
 		//Crea una lista vuota.
 		List<ProjectDTO> projectDTOList = new ArrayList<ProjectDTO>();
 		

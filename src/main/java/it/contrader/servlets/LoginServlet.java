@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import it.contrader.dto.UserDTO;
 import it.contrader.service.LoginService;
+import it.contrader.utils.Application;
 
 
 /*
@@ -34,6 +35,7 @@ public class LoginServlet extends HttpServlet {
 			String password = request.getParameter("password").toString();
 			//come nei vecchi controller, invoca il service
 			UserDTO dto = service.login(username, password);
+			Application.usercheck = dto;
 			if (dto != null)
 				//se il login ha funzionato, salva l'utente nella sessione
 				session.setAttribute("user", dto);

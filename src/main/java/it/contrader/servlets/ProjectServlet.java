@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import it.contrader.dto.ProjectDTO;
 import it.contrader.service.Service;
+import it.contrader.utils.Application;
 import it.contrader.service.ProjectService;
 
 public class ProjectServlet extends HttpServlet{
@@ -57,7 +58,7 @@ public class ProjectServlet extends HttpServlet{
 		
 		case "INSERT":
 			String projectname = request.getParameter("projectname").toString();
-			int userid = Integer.parseInt(request.getParameter("userid"));
+			int userid = Application.usercheck.getId();
 			dto = new ProjectDTO (userid, projectname);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
@@ -68,7 +69,8 @@ public class ProjectServlet extends HttpServlet{
 		case "UPDATE":
 			projectname = request.getParameter("projectname");
 			userid = Integer.parseInt(request.getParameter("userid"));
-			projectid = Integer.parseInt(request.getParameter("projectid")); 
+			projectid = Integer.parseInt(request.getParameter("projectid"));
+			System.out.println(projectname+" "+userid+" "+projectid);
 			dto = new ProjectDTO(projectid, userid, projectname);
 			ans = service.update(dto);
 			updateList(request);

@@ -11,7 +11,8 @@
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
   <a href="homeadmin.jsp">Home</a>
-  <a class="active"  href="UserServlet?mode=userlist">Users</a>
+  <a class="active" href="UserServlet?mode=userlist">Users</a>
+  <a href="ProjectServlet?mode=projectlist">Projects</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>
