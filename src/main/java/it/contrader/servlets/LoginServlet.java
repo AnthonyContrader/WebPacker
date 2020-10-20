@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
 				//altrimenti torna alla pagina di login
 				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 			
-			//esegue una switch cae in base allo usertype per il reindirizzamento
+			//esegue una switch case in base allo usertype per il reindirizzamento
 			switch (dto.getUsertype().toUpperCase()) {
 			case "ADMIN":
 				//questo metodo reindirizza alla JSP tramite URL con una request e una response

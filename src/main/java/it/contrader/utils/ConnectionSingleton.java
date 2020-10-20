@@ -29,7 +29,7 @@ public class ConnectionSingleton {
                 System.out.println("Ho caricato: " + c.getName());
                 String url = "jdbc:" + vendor + "://" + host + ":" + port + "/" + dbName+"?"+jdbcAdditionalParams;
                 connection = (Connection) DriverManager.getConnection(url, username, password);
-               // DriverManagerDataSource dataSource = new DriverManagerDataSource(myUrl, username, password);
+                //DriverManagerDataSource dataSource = new DriverManagerDataSource(myUrl, username, password);
                 //dataSource.setDriverClassName(driver);
                 //connection = dataSource.getConnection();
             } catch (Exception e) {
