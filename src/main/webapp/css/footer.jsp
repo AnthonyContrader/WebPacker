@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="footer">
-Stuff about copyright, legal notes and other useless informations...
+in the name of the king
 </div>
 </body>
 </html>

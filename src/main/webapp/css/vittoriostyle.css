@@ -15,7 +15,7 @@ div.text{
 	text-align: center;
 	font-size: 800%;
 	font-family: sans-serif;
-	color: #00a990;
+	color: #d76b00;
 }
 
 .main {
@@ -30,7 +30,7 @@ div.text{
 .footer {
 	text-align: center;
 	font-size: 70%;
-	background-color: #00a990;
+	background-color: #d76b00;
 	color: #ffffff;
 	width: 100%;
 	border-radius: 7px;
@@ -138,7 +138,7 @@ tr:nth-child(even) {
 }
 
 th {
-	background-color: #00a990;
+	background-color: #d76b00;
 	color: #ffffff;
 	
 }
@@ -159,7 +159,7 @@ select {
   margin: 8px 0;
 }
 select:hover {
-  background-color:  #00ccad;
+  background-color:  #d76b00;
 }
 
 option{
@@ -190,7 +190,7 @@ input {
 }
 
 input:hover {
-  background-color:  #00ccad;
+  background-color:  #d76b00;
 }
 
 
@@ -198,7 +198,7 @@ res {
 	float: left;
 	width: 25%;
 	margin-top: 3%;
-	background-color: #00a990;
+	background-color: #d76b00;
 	border-radius: 7px;
 	color: #ffffff;
 	text-align:center;
@@ -238,7 +238,7 @@ label {
 .bottone {
   -webkit-transition-duration: 0.1s; /* Safari */
   transition-duration: 0.1s;
-  background-color:  #00a990;
+  background-color:  #d76b00;
   border: none;
   color: white;
   padding: 3% 3%;
@@ -258,9 +258,9 @@ label {
 button {
   -webkit-transition-duration: 0.1s; /* Safari */
   transition-duration: 0.1s;
-  background-color:  #00a990;
+  background-color:  #d76b00;
   border: none;
-  color: white;
+  color: black;
   padding: 3% 3%;
   text-align: center;
   text-decoration: none;
@@ -276,8 +276,8 @@ button {
 }
 
 button:hover {
-  background-color:  #00ccad; 
-  color: white;
+  background-color:  #d76b00; 
+  color: black;
 }
 
 
@@ -285,7 +285,7 @@ button:hover {
 /*IDs*/
 #logout {
 	float: right;
-	color: #ffffff;
+	color: #000000;
 }
 
 #floatleft {
@@ -303,7 +303,7 @@ button:hover {
 
 /*Navigation bar*/
 div.navbar {
-	background: #00a990;
+	background: #d76b00;
 	overflow: hidden;
 	position: sticky;
 	width: 100%;
@@ -317,22 +317,22 @@ div.navbar {
 div.navbar a {
 	float: left;
 	display: block;
-	color: #ffffff;
+	color: #000000;
 	text-align: center;
 	padding: 1% 2%;
 	text-decoration: none;
 	font-size: 17px;
 	border-radius: 7px;
-	background: #00a990;
+	background: #d76b00;
 }
 
 div.navbar a:hover {
-	background: #00ccad;
-	color: #ffffff;
+	background: #ff8000;
+	color: #000000;
 }
 
 div.navbar a.active {
-	background: #00ccad;
+	background: #ff8000;
 	color: #ffffff;
 }
 
