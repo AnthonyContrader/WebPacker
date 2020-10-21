@@ -80,16 +80,14 @@
 	
 	<tr>
 	<td colspan = "5" >
-	<% if (Application.usercheck.getUsertype().equals("ADMIN") && request.getParameter("my_projects") == null){%>
-      <button class = "bottone" onclick="window.location.href='ProjectServlet?mode=projectlist&my_projects=true'">My Projects</button>
-      <% 
-      }
-	else{
-      %>
-      <button class = "bottone" onclick="window.location.href='ProjectServlet?mode=projectlist'">All Projects</button>
-      <%
-      } 
-      %>
+	<% if (Application.usercheck.getUsertype().equals("ADMIN") && request.getParameter("my_projects") == null) {%>
+		<button class = "bottone" onclick="window.location.href='ProjectServlet?mode=projectlist&my_projects=true'">My Projects</button>
+		<%} else if(Application.usercheck.getUsertype().equals("ADMIN")){
+		%>
+	<button class = "bottone" onclick="window.location.href='ProjectServlet?mode=projectlist'">All Projects</button>
+	<%
+	}
+	%>
 	</td>
 	</tr>
 	
