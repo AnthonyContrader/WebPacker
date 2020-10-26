@@ -1,1 +1,2 @@
-# WebPacker
+# SAMPLE
+Sample Projects
