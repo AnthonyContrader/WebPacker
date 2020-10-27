@@ -80,7 +80,19 @@
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
 			<version>2.0</version>
-		</dependency>		
+		</dependency>
+
+		<dependency>
+    		<groupId>org.javassist</groupId>
+    		<artifactId>javassist</artifactId>
+    		<version>3.23.1-GA</version>
+		</dependency>
+    	<dependency>
+      		<groupId>javax.ws.rs</groupId>
+      		<artifactId>javax.ws.rs-api</artifactId>
+      		<version>2.0</version>
+    	</dependency>
+				
 		</dependencies>
 	<build>
 		<plugins>

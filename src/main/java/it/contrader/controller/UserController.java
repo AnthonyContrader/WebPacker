@@ -26,7 +26,10 @@ public class UserController {
 
 		UserDTO userDTO = service.findByUsernameAndPassword(username, password);
 		request.getSession().setAttribute("user", userDTO);
-
+		
+		if (userDTO == null)
+			return "index";
+		
 		switch (userDTO.getUsertype()) {
 
 		case ADMIN:
