@@ -16,7 +16,7 @@
 	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a> 
 		<a  href="/user/getall">Users</a>
-		<a class="active" href="/project/getall">Users</a>
+		<a class="active" href="/project/getall">Projects</a>
 		 <a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<div class="main">
@@ -38,12 +38,12 @@
 				for (ProjectDTO u : list) {
 			%>
 			<tr>
-				<td><a href="/project/read?id=<%=u.getProjectid()%>"> <%=u.getProjectid()%>
+				<td><a href="/project/read?projectid=<%=u.getProjectid()%>"> <%=u.getProjectid()%>
 				</a></td>
 				<td><%=u.getUserid()%></td>
 				<td><%=u.getProjectname()%></td>
-				<td><a href="/project/preupdate?id=<%=u.getProjectid()%>">Edit</a></td>
-				<td><a href="/project/delete?id=<%=u.getProjectid()%>">Delete</a></td>
+				<td><a href="/project/preupdate?projectid=<%=u.getProjectid()%>">Edit</a></td>
+				<td><a href="/project/delete?projectid=<%=u.getProjectid()%>">Delete</a></td>
 
 			</tr>
 			<%

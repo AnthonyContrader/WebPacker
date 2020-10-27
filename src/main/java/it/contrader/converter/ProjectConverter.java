@@ -22,7 +22,7 @@ public class ProjectConverter extends AbstractConverter<Project, ProjectDTO> {
 	public ProjectDTO toDTO(Project Project) {
 		ProjectDTO ProjectDTO = null;
 		if (Project != null) {
-			ProjectDTO = new ProjectDTO(ProjectDTO.getProjectid(), ProjectDTO.getUserid(), ProjectDTO.getProjectname());
+			ProjectDTO = new ProjectDTO(Project.getProjectid(), Project.getUserid(), Project.getProjectname());
 
 		}
 		return ProjectDTO;

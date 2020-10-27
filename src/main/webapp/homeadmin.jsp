@@ -1,4 +1,6 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" import="it.contrader.dto.UserDTO"
+	import = "it.contrader.model.User.Usertype"%>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -18,16 +20,23 @@
 
 <body>
 	<%@include file="css/header.jsp"%>
-
+	
 
 	<div class="navbar">
-		<a class="active" href="/homeadmin.jsp">Home</a> <a href=/user/getall>Users</a>
+		<a class="active" href="/homeadmin.jsp">Home</a>
+		<% UserDTO u = (UserDTO) request.getSession().getAttribute("user"); %>
+		<% if (u.getUsertype() == Usertype.ADMIN) {%>
+		<a href=/user/getall>Users</a>
+		<% 
+		}
+		%>
+		<a href=/project/getall>Projects</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
-
+	
 	<div class="main">
 		<h1>Welcome ${user.getUsername()}</h1>
-
+		
 		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 		eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
 		minim veniam, quis nostrud exercitation ullamco laboris nisi ut

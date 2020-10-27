@@ -27,13 +27,11 @@
 
 		<table>
 			<tr>
-				<th>ID</th>
 				<th>Projectid</th>
 				<th>Userid</th>
 				<th>Projectname</th>
 			</tr>
 			<tr>
-				<td><%=u.getId()%></td>
 				<td><%=u.getProjectid()%></td>
 				<td><%=u.getUserid()%></td>
 				<td><%=u.getProjectname()%></td>

@@ -39,11 +39,10 @@ public class ProjectController {
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("projectid") Long projectid, @RequestParam("userid") Long userid,
+	public String update(HttpServletRequest request, @RequestParam("userid") Long userid,
 			@RequestParam("projectname") String projectname) {
 
 		ProjectDTO dto = new ProjectDTO();
-		dto.setProjectid(projectid);
 		dto.setProjectname(projectname);
 		dto.setUserid(userid);
 		service.update(dto);
@@ -53,12 +52,12 @@ public class ProjectController {
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("projectid") Long projectid,
+	public String insert(HttpServletRequest request,
 			@RequestParam("userid") Long userid, @RequestParam("projectname") String projectname) {
 		ProjectDTO dto = new ProjectDTO();
+		
 		dto.setProjectname(projectname);
 		dto.setUserid(userid);
-		dto.setProjectid(projectid);
 		service.insert(dto);
 		setAll(request);
 		return "projects";
