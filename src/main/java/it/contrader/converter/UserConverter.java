@@ -27,4 +27,5 @@ public class UserConverter extends AbstractConverter<User, UserDTO> {
 		}
 		return userDTO;
 	}
+
 }

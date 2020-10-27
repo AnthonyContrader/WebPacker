@@ -16,22 +16,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-public class User {
-
-	public enum Usertype {
-		ADMIN, USER
-	}
+public class Project {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long projectid;
 
 	@Column(unique = true)
-	private String username;
+	private Long userid;
 
-	private String password;
+	private String projectname;
 	
-	@Enumerated (EnumType.STRING)
-	private Usertype usertype;
 
 }
