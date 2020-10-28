@@ -40,14 +40,10 @@ public class ProjectController {
 	}
 	
 	@PostMapping("/update")
-<<<<<<< HEAD
+
 	public String update(HttpServletRequest request, @RequestParam(value="userid", required = true) Long userid,
 			@RequestParam(value="projectname", required = true) String projectname,@RequestParam("projectid") Long projectid ) {
-=======
-	public String update(HttpServletRequest request,@RequestParam("projectid") Long projectid,
-			@RequestParam("userid") Long userid, @RequestParam("projectname") String projectname) {
 
->>>>>>> 876046c36d515d2fa707c0f2c661ddb12adae81f
 		ProjectDTO dto = new ProjectDTO();
 		dto.setProjectid(projectid);
 		dto.setProjectname(projectname);
