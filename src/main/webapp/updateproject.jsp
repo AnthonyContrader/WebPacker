@@ -35,6 +35,7 @@
 
 
 		<form id="floatleft" action="/project/update" method="post">
+<<<<<<< HEAD
 			<input type="hidden" id="projectid" name="projectid" value=<%=u.getProjectid()%> required>		
 			<div class="row" style=<%=show %>>
 				<div class="col-25">
@@ -55,9 +56,39 @@
 			</div>
 	<button type="submit">Edit</button>
 	</form>
+=======
+
+			<div class="row">
+    <div class="col-25">
+      <label for="user">Userid</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="user" name="userid" value=<%=u.getUserid()%>>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+     <label for="pass">Projectname</label>
+    </div>
+    <div class="col-75">
+      <input
+			type="text" id="pass" name="projectname" value=<%=u.getProjectname()%>> 
+    </div>
+  </div>
+  <div class="row">
+    
+   		
+    	<input type="hidden" name="projectid" value =<%=u.getProjectid() %>>
+  </div>
+      <button type="submit" >Edit</button>
+</form>
+>>>>>>> 876046c36d515d2fa707c0f2c661ddb12adae81f
+
+	
+</div>
 
 
-	</div>
+	
 	<br>
 	<%@ include file="./css/footer.jsp"%>
 </body>
