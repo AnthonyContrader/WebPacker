@@ -1,5 +1,7 @@
 <%@ page import="it.contrader.dto.ProjectDTO" import="java.util.*"
-  import="it.contrader.dto.UserDTO" import="java.util.*"%>
+  import="it.contrader.dto.UserDTO" import="java.util.*"
+  	import = "it.contrader.model.User.Usertype"%>
+  
 <html>
 <head>
 <meta charset="utf-8">
@@ -16,9 +18,16 @@
 
 	<%@ include file="./css/header.jsp"%>
 
-	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> 
-		<a  href="/user/getall">Users</a>
+		<div class="navbar">
+		<a class="active" href="/homeadmin.jsp">Home</a>
+		<% 
+		 UserDTO us = (UserDTO) request.getSession().getAttribute("user"); 	
+		 request.getSession().setAttribute("Errore", null);
+		 if (us.getUsertype() == Usertype.ADMIN) {%>
+		<a href=/user/getall>Users</a>
+		<% 
+		}
+		%>
 		<a class="active" href="/project/getall">Projects</a>
 		 <a href="/user/logout" id="logout">Logout</a>
 	</div>

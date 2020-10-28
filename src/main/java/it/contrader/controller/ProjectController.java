@@ -1,5 +1,7 @@
 package it.contrader.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.contrader.dto.ProjectDTO;
 import it.contrader.model.User.Usertype;
 import it.contrader.service.ProjectService;
+import it.contrader.service.UserService;
 
 @Controller
 @RequestMapping("/project")
@@ -19,7 +22,9 @@ public class ProjectController {
 	
 	@Autowired
 	private ProjectService service;
-	
+	@Autowired
+	private UserService serviceuser;
+
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
@@ -31,6 +36,21 @@ public class ProjectController {
 		service.delete(projectid);
 		setAll(request);
 		return "projects";
+	}
+	
+	@GetMapping("/deleteall")
+	public String deleteAll(HttpServletRequest request, @RequestParam("id") Long userid) {
+		List<ProjectDTO> dto=service.getAll();
+
+		for  (ProjectDTO u : dto) {
+			if(u.getUserid()==userid) {
+				service.delete(u.getProjectid());	
+			}
+		}
+		
+		serviceuser.delete(userid);
+		request.getSession().setAttribute("list", serviceuser.getAll());
+		return ("users");
 	}
 	
 	@GetMapping("/preupdate")

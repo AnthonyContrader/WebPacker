@@ -19,7 +19,6 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
-
 	@PostMapping("/login")
 	public String login(HttpServletRequest request, @RequestParam(value = "username", required = true) String username,
 			@RequestParam(value = "password", required = true) String password) {

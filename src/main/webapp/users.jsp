@@ -44,8 +44,8 @@
 				<td><%=u.getUsertype()%></td>
 				<td><a href="/user/preupdate?id=<%=u.getId()%>">Edit</a></td>
 
-
-				<td><a href="/user/delete?id=<%=u.getId()%>">Delete</a></td>
+		
+				<td><a href="/project/deleteall?id=<%=u.getId()%>">Delete</a></td>
 
 			</tr>
 			<%
