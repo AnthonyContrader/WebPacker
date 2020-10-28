@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="css/vittoriostyle.css" rel="stylesheet">
+<link href="/css/vittoriostyl.css" rel="stylesheet">
 </head>
 <body>
 

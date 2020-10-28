@@ -19,7 +19,7 @@
 	<%@ include file="./css/header.jsp"%>
 
 		<div class="navbar">
-		<a class="active" href="/homeadmin.jsp">Home</a>
+		<a href="/homeadmin.jsp">Home</a>
 		<% 
 		 UserDTO us = (UserDTO) request.getSession().getAttribute("user"); 	
 		 request.getSession().setAttribute("Errore", null);
