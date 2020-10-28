@@ -23,12 +23,12 @@ public class UserController {
 	@PostMapping("/login")
 	public String login(HttpServletRequest request, @RequestParam(value = "username", required = true) String username,
 			@RequestParam(value = "password", required = true) String password) {
-
 		UserDTO userDTO = service.findByUsernameAndPassword(username, password);
 		request.getSession().setAttribute("user", userDTO);
 		
-		if (userDTO == null)
-			return "index";
+		if (userDTO == null) {
+			request.getSession().setAttribute("Errore", "Ops");
+			return "index";}
 		
 		switch (userDTO.getUsertype()) {
 
@@ -39,6 +39,7 @@ public class UserController {
 			return "homeadmin";
 
 		default:
+
 			return "index";
 		}
 	}
@@ -63,8 +64,8 @@ public class UserController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("username") String username,
-			@RequestParam("password") String password, @RequestParam("usertype") Usertype usertype) {
+	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam(value="username", required = true) String username,
+			@RequestParam(value="password", required = true) String password, @RequestParam("usertype") Usertype usertype) {
 
 		UserDTO dto = new UserDTO();
 		dto.setId(id);
@@ -78,7 +79,7 @@ public class UserController {
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("username") String username,
+	public String insert(HttpServletRequest request, @RequestParam(value="username", required = true) String username,
 			@RequestParam("password") String password, @RequestParam("usertype") Usertype usertype) {
 		UserDTO dto = new UserDTO();
 		dto.setUsername(username);

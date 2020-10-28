@@ -16,7 +16,7 @@
 	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a>
 		<a class="active" href="/user/getall">Users</a>
-		<a href=/projects/getall>Projects</a>
+		<a href=/project/getall>Projects</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<div class="main">
@@ -62,7 +62,7 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="user" name="username"
-						placeholder="inserisci username">
+						placeholder="inserisci username" required> 
 				</div>
 			</div>
 			<div class="row">
@@ -71,7 +71,7 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="pass" name="password"
-						placeholder="inserisci password">
+						placeholder="inserisci password" required>
 				</div>
 			</div>
 			<div class="row">

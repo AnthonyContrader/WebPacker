@@ -8,12 +8,10 @@
 <meta name="description" content="User Management">
 <meta name="author" content="Vittorio Valent">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-                 
 <title>Project Manager</title>
 
 </head>
 <body>
-
 	<%@ include file="./css/header.jsp"%>
 
 	<div class="navbar">
@@ -26,7 +24,7 @@
 		<%
 			List<ProjectDTO> list = (List<ProjectDTO>) request.getSession().getAttribute("list");
 			UserDTO user = (UserDTO) request.getSession().getAttribute("user"); 
-			String link="", buttonName="", show="display:'block';";
+			String link="", buttonName="", show="display:none;";
 		%>
 
 		<br>
@@ -43,9 +41,9 @@
 			
 				for (ProjectDTO u : list) {
 				
-						if(u.getUserid() == user.getId() && user.getUsertype().toString().equals("USER") || user.getUsertype().toString().equals("ADMIN") ){
+						if((u.getUserid() == user.getId() && user.getUsertype().toString().equals("USER") || user.getUsertype().toString().equals("ADMIN") ) && (request.getParameter("my_projects") == null || (u.getUserid() == user.getId() && request.getParameter("my_projects").equals("true")))){
 				%>
-			<tr id=<%=u.getProjectid()%> style=<%=show %>>
+			<tr>
 				<td><a href="/project/read?projectid=<%=u.getProjectid()%>"> <%=u.getProjectid()%>
 				</a></td>
 				<td><%=u.getUserid()%></td>
@@ -67,10 +65,16 @@
 <% 
 	if(user.getUsertype().toString().equals("ADMIN")){
 		show="display:'block';";
-			
-	}else{show="display:none;";}
+		if ( request.getParameter("my_projects") == null) {
+			buttonName="My Projects";
+			link="window.location.href='getall?my_projects=true'";
+		} else {
+			buttonName="All Projects";
+			link="window.location.href='getall'";
+		}
+	}
 	%>
-	<button class = "bottone" style=<%=show %> onclick="myproject()" >My Project</button>
+	<button class = "bottone" style=<%=show %>	 onclick=<%=link %> ><%= buttonName %></button>
 		</td>
 	</tr>
 	
@@ -103,23 +107,5 @@
 	</div>
 	<br>
 	<%@ include file="./css/footer.jsp"%>
-	<script type="text/javascript">
-function myproject() {
-	<%
-	for (ProjectDTO u : list) {
-		if(u.getUserid() != user.getId()){
-		%>
-		document.getElementById(<%=u.getProjectid()%>).style.display='none';
-		<%
-		}
-	}%>
-	document.getElementsByClassName("bottone")[0].innerHTML="All Projects";
-	document.getElementsByClassName("bottone")[0].setAttribute( "onClick", "javascript: allproject();" );
-}
-
-function allproject() {
-	window.location.href='getall';
-}
-</script>
 </body>
 </html>

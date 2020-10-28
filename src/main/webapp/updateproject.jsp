@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="it.contrader.dto.ProjectDTO"%>
+	pageEncoding="ISO-8859-1" import="it.contrader.dto.ProjectDTO"
+	 import="it.contrader.dto.UserDTO" import="java.util.*"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +17,7 @@
 <body>
 	<%@ include file="./css/header.jsp"%>
 	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> <a href=/projects/getall>Users</a> <a
+		<a href="/homeadmin.jsp">Home</a> <a href=/project/getall>Users</a> <a
 			class="active" href="/project/getall">Projects</a> <a
 			href="/user/logout" id="logout">Logout</a>
 	</div>
@@ -24,17 +26,22 @@
 
 		<%
 			ProjectDTO u = (ProjectDTO) request.getSession().getAttribute("dto");
+			UserDTO user = (UserDTO) request.getSession().getAttribute("user"); 
+			String show="display:none;";
+			if(user.getUsertype().toString().equals("ADMIN")){
+				show="display:'block';";
+				}
 		%>
 
 
 		<form id="floatleft" action="/project/update" method="post">
-
-			<div class="row">
+			<input type="hidden" id="projectid" name="projectid" value=<%=u.getProjectid()%> required>		
+			<div class="row" style=<%=show %>>
 				<div class="col-25">
 					<label for="user">userid</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="user" name="userid" value=<%=u.getUserid()%>>
+					<input type="text" id="user" name="userid" value=<%=u.getUserid()%> required>
 				</div>
 			</div>
 			<div class="row">
