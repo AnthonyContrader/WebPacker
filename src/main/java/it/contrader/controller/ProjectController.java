@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.ProjectDTO;
+import it.contrader.model.User.Usertype;
 import it.contrader.service.ProjectService;
 
 @Controller
@@ -39,10 +40,11 @@ public class ProjectController {
 	}
 	
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("userid") Long userid,
-			@RequestParam("projectname") String projectname) {
+	public String update(HttpServletRequest request,@RequestParam("projectid") Long projectid,
+			@RequestParam("userid") Long userid, @RequestParam("projectname") String projectname) {
 
 		ProjectDTO dto = new ProjectDTO();
+		dto.setProjectid(projectid);
 		dto.setProjectname(projectname);
 		dto.setUserid(userid);
 		service.update(dto);

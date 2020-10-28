@@ -30,27 +30,35 @@
 		<form id="floatleft" action="/project/update" method="post">
 
 			<div class="row">
-				<div class="col-25">
-					<label for="user">userid</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="user" name="userid" value=<%=u.getUserid()%>>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-25">
-					<label for="projectname">projectname</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="projectname" name="projectname"
-						value=<%=u.getProjectname()%>>
-				</div>
-			</div>
-	<button type="submit">Edit</button>
-	</form>
+    <div class="col-25">
+      <label for="user">Userid</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="user" name="userid" value=<%=u.getUserid()%>>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+     <label for="pass">Projectname</label>
+    </div>
+    <div class="col-75">
+      <input
+			type="text" id="pass" name="projectname" value=<%=u.getProjectname()%>> 
+    </div>
+  </div>
+  <div class="row">
+    
+   		
+    	<input type="hidden" name="projectid" value =<%=u.getProjectid() %>>
+  </div>
+      <button type="submit" >Edit</button>
+</form>
+
+	
+</div>
 
 
-	</div>
+	
 	<br>
 	<%@ include file="./css/footer.jsp"%>
 </body>
