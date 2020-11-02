@@ -10,9 +10,8 @@ import it.contrader.model.Project;
 
 /**
  * Estende CrudRepository ed eredita tutti i metodi di CRUD. 
- * Definisce il metodo di login.
  * 
- * @author Vittorio Valent & Girolamo Murdaca
+ * @author Crapara Team
  *
  * @see CrudRepository
  *
@@ -21,6 +20,6 @@ import it.contrader.model.Project;
 @Transactional
 public interface ProjectRepository extends CrudRepository<Project, Long>{
 
-	Project findByProjectidAndUserid(String projectid, String userid);
+	Project findByProjectid(Long projectid);
 	
 }

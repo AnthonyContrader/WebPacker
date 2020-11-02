@@ -7,6 +7,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * DTO della classe Project. Ha gli stessi attributi di Project
+ * 
+ * @author Crapara Team
+ * 
+ *@see Project
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

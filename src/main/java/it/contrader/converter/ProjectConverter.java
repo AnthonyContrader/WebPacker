@@ -6,6 +6,14 @@ import org.springframework.stereotype.Component;
 import it.contrader.dto.ProjectDTO;
 import it.contrader.model.Project;
 
+/**
+ * Questa classe implementa i metodi di conversione dell'entità Project.
+ *  
+ * @author Crapara Team
+ * 
+ *@see AbstractConverter
+ *@see Converter
+ */
 @Component
 public class ProjectConverter extends AbstractConverter<Project,ProjectDTO> {
 

@@ -1,5 +1,3 @@
-
-
 package it.contrader.model;
 
 import javax.persistence.Entity;
@@ -16,7 +14,7 @@ import lombok.NoArgsConstructor;
 /**
  * 
  * Model dell'entità Project.
- * @author Vittorio Valent & Girolamo Murdaca
+ * @author Crapara Team
  * 
  * @see ProjectDTO
  */

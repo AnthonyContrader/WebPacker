@@ -10,7 +10,7 @@ import it.contrader.model.Project;
  * Estende AbstractService con parametri Project e ProjectDTO. 
  * Implementa il metodo di ricerca ed eredita quelli Abstract. 
  * 
- * @author Vittorio Valent & Girolamo Murdaca
+ * @author Crapare Team
  * 
  * @see AbstractService
  * @see ServiceDTO

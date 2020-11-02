@@ -16,7 +16,7 @@ import it.contrader.service.ProjectService;
  * Questa classe estende AbstractController con tipo ProjectDTO.
  * In aggiunta ai metodi di CRUD si implementa il metodo di ottenimento di un progetto??
  * 
- * @author Stefano Marcomini
+ * @author Crapara Team
  * 
  * @param<ProjectDTO>
  * 
@@ -28,15 +28,15 @@ import it.contrader.service.ProjectService;
 @CrossOrigin(origins = "http://localhost:4200")
 public class ProjectController extends AbstractController<ProjectDTO>{
 	
+/*
 	@Autowired
 	private ProjectService ProjectService;
 
-/*
 	//POST Angular a UserDTO
 	@PostMapping(value = "/login")
 	public ProjectDTO login( @RequestBody LoginDTO loginDTO ) {
 		//Metodo per trovare il progetto specifico by projectid
 		return ProjectService.findById(loginDTO.getUsername(), loginDTO.getPassword());
 	}
-	*/
+*/
 }

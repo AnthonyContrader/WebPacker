@@ -39,10 +39,7 @@ public class User {
 	private String username;
 	
 	private String password;
-<<<<<<< HEAD
-=======
 
->>>>>>> c02a7b9803f168c947fc95025af29b7ba224fb15
 	@Enumerated (EnumType.STRING)
 	private Usertype usertype;
 	
