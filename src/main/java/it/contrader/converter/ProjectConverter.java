@@ -1,12 +1,12 @@
 package it.contrader.converter;
 
 
+import org.springframework.stereotype.Component;
+
 import it.contrader.dto.ProjectDTO;
-import it.contrader.dto.UserDTO;
 import it.contrader.model.Project;
-import it.contrader.model.User;
 
-
+@Component
 public class ProjectConverter extends AbstractConverter<Project,ProjectDTO> {
 
 	

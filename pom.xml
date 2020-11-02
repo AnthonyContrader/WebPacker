@@ -106,14 +106,13 @@
 			<artifactId>javax.ws.rs-api</artifactId>
 			<version>2.0</version>
 		</dependency>
-<<<<<<< HEAD
+
 		<dependency>
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
 			<version>3.23.1-GA</version>
 			</dependency>
 
-=======
 			
 		<dependency>
    			<groupId>org.javassist</groupId>
@@ -127,7 +126,6 @@
             <version>2.0</version>
         </dependency>
        
->>>>>>> c02a7b9803f168c947fc95025af29b7ba224fb15
 	</dependencies>
 	<build>
 		<plugins>
