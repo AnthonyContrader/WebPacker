@@ -1,71 +1,62 @@
 <div class="container">
     <div class="row mt-5">
-      <div class="col-md-1">
-  
-      </div>
-      <div class="col-md-10">
-        <table>
-          <tr>
-            <th>
-              Username
-            </th>
-            <th>
-              Password
-            </th>
-            <th>
-              Usertype
-            </th>
-            <th>
-              Edit
-            </th>
-            <th>
-              User
-            </th>
-          </tr>
-          <tr>
-            <td>
-              <input placeholder="username" [(ngModel)]="usertoinsert.username">
-            </td>
-            <td>
-              <input placeholder="password" [(ngModel)]="usertoinsert.password">
-            </td>
-            <td>
-              <select placeholder="usertype" [(ngModel)]="usertoinsert.usertype">
-                <option value="ADMIN">ADMIN</option>
-                <option value="USER">USER</option>
-              </select>
-            </td>
-            <td>
-              <button (click)="insert(usertoinsert)">Insert</button>
-            </td>
-            <td>
-              <button (click)="clear()">Clear</button>
-            </td>
-          </tr>
-          <tr *ngFor="let user of users">
-            <td>
-              <input [(ngModel)]="user.username">
-            </td>
-            <td>
-              <input [(ngModel)]="user.password">
-            </td>
-            <td>
-              <select [(ngModel)]="user.usertype">
-                <option [selected]="user.usertype===ADMIN" value="ADMIN">ADMIN</option>
-                <option [selected]="user.usertype===USER" value="USER">USER</option>
-              </select>
-            </td>
-            <td>
-              <button (click)=update(user)>Save</button>
-            </td>
-            <td>
-              <button (click)="delete(user)">Delete</button>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="col-md-1">
-  
-      </div>
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-10">
+            <table>
+                <tr>
+                    <th>
+                        Project id
+                    </th>
+                    <th>
+                        User Id
+                    </th>
+                    <th>
+                        Project name
+                    </th>
+                    <th>
+                        Edit
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input placeholder="projectid" [(ngModel)]="projectinsert.projectid">
+                    </td>
+                    <td>
+                        <input placeholder="userid" [(ngModel)]="projectinsert.userid">
+                    </td>
+                    <td>
+                        <input placeholder="projectname" [(ngModel)]="projectinsert.projectname">
+                    </td>
+                    <td>
+                        <button (click)="insert(projectinsert)">Insert</button>
+                    </td>
+                    <td>
+                        <button (click)="clear()">Clear</button>
+                    </td>
+                </tr>
+                <tr *ngFor="let project of projects">
+                    <td>
+                        <input [(ngModel)]="project.projectid">
+                    </td>
+                    <td>
+                        <input [(ngModel)]="project.userid">
+                    </td>
+                    <td>
+                        <input [(ngModel)]="project.projectname">
+                    </td>
+                    <td>
+                        <button (click)=update(project)>Save</button>
+                    </td>
+                    <td>
+                        <button (click)="delete(project)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-1">
+
+        </div>
     </div>
-  </div>
+</div>
