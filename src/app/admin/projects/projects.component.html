@@ -36,7 +36,7 @@
                         <button (click)="clear()">Clear</button>
                     </td>
                 </tr>
-                <tr *ngFor="let project of projects">
+                <tr *ngFor="let project of projectview">
                     <td>
                         <input [(ngModel)]="project.projectid">
                     </td>

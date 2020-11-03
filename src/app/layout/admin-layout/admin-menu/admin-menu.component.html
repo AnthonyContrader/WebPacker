@@ -37,14 +37,14 @@
         </button>
         <div class="collapsebtn" id="allprojects" *ngIf="isProjectCollapsed">
             <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
-                <a [routerLink]="['/admin-dashboard/projects']"> <i class="fas fa-edit" style="margin-right: 10px">
+                <a [routerLink]="['/admin-dashboard/projects']"[queryParams]="{ ciao: 'true'}" > <i class="fas fa-edit" style="margin-right: 10px">
                     </i> Manage All Projects </a>
             </button>
         </div>
 
         <div class="collapsebtn" id="myprojects" *ngIf="isProjectCollapsed">
             <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
-                <a [routerLink]="['/admin-dashboard/projects']"> <i class="fas fa-edit" style="margin-right: 10px">
+                <a [routerLink]="['/admin-dashboard/projects']" > <i class="fas fa-edit" style="margin-right: 10px">
                     </i> Manage My Projects </a>
             </button>
         </div>

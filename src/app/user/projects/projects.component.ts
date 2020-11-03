@@ -19,6 +19,7 @@ export class ProjectsComponent implements OnInit {
 
   getProjects() {
     this.service.getAll().subscribe(projects => this.projects = projects);
+    
   }
 
   delete(project: ProjectDTO) {
