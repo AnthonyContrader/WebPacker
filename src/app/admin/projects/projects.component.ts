@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectService } from 'src/service/project.service';
+import { ProjectDTO } from 'src/dto/projectdto';
 
 @Component({
   selector: 'app-projects',
@@ -21,7 +23,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   delete(project: ProjectDTO) {
-    this.service.delete(project.id).subscribe(() => this.getProject());
+    this.service.delete(project.projectid).subscribe(() => this.getProject());
   }
 
   update(project: ProjectDTO) {

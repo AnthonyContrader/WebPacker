@@ -30,6 +30,25 @@
                         </i> Manage Users </a>
                 </button>
             </div>
+
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#projects"
+            (click)="projectscollapse()">
+            <i class="fas fa-receipt" style="margin-right: 15px"></i>Projects
+        </button>
+        <div class="collapsebtn" id="allprojects" *ngIf="isProjectCollapsed">
+            <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                <a [routerLink]="['/admin-dashboard/projects']"> <i class="fas fa-edit" style="margin-right: 10px">
+                    </i> Manage All Projects </a>
+            </button>
+        </div>
+
+        <div class="collapsebtn" id="myprojects" *ngIf="isProjectCollapsed">
+            <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                <a [routerLink]="['/admin-dashboard/projects']"> <i class="fas fa-edit" style="margin-right: 10px">
+                    </i> Manage My Projects </a>
+            </button>
+        </div>
+
             <button class="menubtn" (click)="logout()">
                 <i class="fas fa-sign-out-alt" style="margin-right: 15px"></i>Logout
             </button>

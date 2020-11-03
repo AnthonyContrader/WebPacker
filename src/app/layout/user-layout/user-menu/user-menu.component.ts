@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-menu',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserMenuComponent implements OnInit {
 
-  isUserCollapsed = false;
+  isProjectCollapsed = false;
   isClientCollapsed = false;
   isAccountCollapsed = false;
 
@@ -21,10 +22,10 @@ export class UserMenuComponent implements OnInit {
     this.router.navigateByUrl('');
   }
 
-  userscollapse() {
-    if (this.isUserCollapsed === false) {
-      this.isUserCollapsed = true;
-    } else { this.isUserCollapsed = false; }
+  projectscollapse() {
+    if (this.isProjectCollapsed === false) {
+      this.isProjectCollapsed = true;
+    } else { this.isProjectCollapsed = false; }
   }
 
   accountcollapse() {
