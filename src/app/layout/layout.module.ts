@@ -10,14 +10,15 @@ import { UserMenuComponent } from './user-layout/user-menu/user-menu.component';
 /**
  * Modulo di layout. Viene caricato nel rputer outlet padre e poi 
  * non viene più ricaricato. Quando clicchiamo su un link ricarichiamo solo l'outlet
- * che sta dentro AdminLayoutComponent
+ * che sta dentro AdminLayoutComponent e UserLayoutComponent
  * 
  * @author Vittorio Valent
  * 
  * @see AdminLayoutComponent
+ * @see UserLayoutComponent
  */
 @NgModule({
-  declarations: [AdminLayoutComponent, AdminMenuComponent, HeaderComponent, UserLayoutComponent, UserMenuComponent],
+  declarations: [UserLayoutComponent, UserMenuComponent,AdminLayoutComponent, AdminMenuComponent, HeaderComponent, UserLayoutComponent, UserMenuComponent],
   imports: [
     CommonModule,
     RouterModule
