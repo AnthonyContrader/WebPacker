@@ -3,6 +3,8 @@ import { LoginDTO } from 'src/dto/logindto';
 import { NgForm } from '@angular/forms';
 import { UserService } from 'src/service/user.service';
 import { Router } from '@angular/router';
+import { UserDTO } from 'src/dto/userdto';
+import { Usertype } from 'src/dto/usertype';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +14,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginDTO: LoginDTO;
+  newUser: UserDTO = new UserDTO();
 
   constructor(private service: UserService, private router: Router) { }
 
@@ -39,6 +42,33 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/login']);
         }
       }
+    }, undefined, ()=>{
+      alert("L'UTENTE NON ESISTE, EFFETTUA LA REGISTRAZIONE");
     });
   }
+
+  signup(f: NgForm): void{
+    this.loginDTO = new LoginDTO(f.value.username, f.value.password);
+
+    this.service.login(this.loginDTO).subscribe((user) => {
+      if (user == null){
+        
+        this.newUser.username = this.loginDTO.username;
+        this.newUser.password = this.loginDTO.password;
+        this.newUser.usertype = Usertype.USER;
+
+        localStorage.setItem('currentUser', JSON.stringify(this.newUser));
+        
+        this.service.insert(this.newUser).subscribe(()=>{
+          alert("REGISTRAZIONE EFFETTUATA, ORA FAI IL LOGIN");
+        });
+        
+      }
+    });
+
+    
+    
+
+  }
+
 }
