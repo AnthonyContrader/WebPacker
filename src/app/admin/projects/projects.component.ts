@@ -16,6 +16,8 @@ export class ProjectsComponent implements OnInit {
   projectinsert: ProjectDTO = new ProjectDTO();
   projectview: ProjectDTO[];
   confronto: string;
+  userid : number;
+
   constructor(private router: Router, private service: ProjectService,private route: ActivatedRoute)
   {
     this.router.routeReuseStrategy.shouldReuseRoute = function()
@@ -32,6 +34,7 @@ export class ProjectsComponent implements OnInit {
 
   getProject() 
   {
+    this.getuserid();
     this.projectview=[];
     
     this.service.getAll().subscribe(projects => 
@@ -59,10 +62,16 @@ export class ProjectsComponent implements OnInit {
   }
 
   insert(project: ProjectDTO) {
+    project.projectid = 0;
+    project.userid = this.userid;
     this.service.insert(project).subscribe(() => this.getProject());
   }
 
   clear(){
     this.projectinsert = new ProjectDTO();
+  }
+
+  getuserid(){
+    this.userid = JSON.parse(localStorage.getItem('currentUser')).id;
   }
 }
