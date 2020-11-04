@@ -7,6 +7,7 @@ import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { GeneralInfoComponent } from './general-info/general-info.component';
 
 /**
  * Modulo dell'admin, qui vengono dichiarate le component che utilizza 
@@ -17,7 +18,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, ProjectsComponent, EditProfileComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, ProjectsComponent, EditProfileComponent, GeneralInfoComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

@@ -5,6 +5,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { GeneralInfoComponent } from './general-info/general-info.component';
 
 /**
  * Modulo dell'user, qui vengono dichiarate le component che utilizza 
@@ -12,7 +13,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
  **/
 
 @NgModule({
-    declarations: [UserDashboardComponent,ProjectsComponent, EditProfileComponent],
+    declarations: [UserDashboardComponent,ProjectsComponent, EditProfileComponent, GeneralInfoComponent],
     imports: [
       CommonModule,
       UserRoutingModule,
