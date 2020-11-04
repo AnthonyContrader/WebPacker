@@ -33,7 +33,7 @@ export class ProjectsComponent implements OnInit {
   getProject() 
   {
     this.projectview=[];
-    console.log("ciao"+ this.confronto);
+    
     this.service.getAll().subscribe(projects => 
   {
     this.projects = projects;

@@ -11,14 +11,38 @@ export class ProjectsComponent implements OnInit {
 
   projects: ProjectDTO[];
   projecttoinsert: ProjectDTO = new ProjectDTO();
+  projectview: ProjectDTO[];
+  userid : number;
+  
+  
   constructor(private service: ProjectService) { }
 
   ngOnInit() {
+    
     this.getProjects();
+  
   }
 
   getProjects() {
-    this.service.getAll().subscribe(projects => this.projects = projects);
+
+    this.getuserid();
+    this.projectview=[];
+    this.service.getAll().subscribe(projects => 
+      {
+        this.projects = projects;
+        this.projects.forEach((pasquale)=> 
+          {
+            if (JSON.parse(localStorage.getItem('currentUser')).id==pasquale.userid)
+              {
+                this.projectview.push(pasquale);
+              }
+          }
+        )
+      }
+      ) 
+      ; 
+      
+      
     
   }
 
@@ -31,10 +55,20 @@ export class ProjectsComponent implements OnInit {
   }
 
   insert(project: ProjectDTO) {
+
+    project.projectid = 0;
+
+    project.userid = this.userid;
+    
     this.service.insert(project).subscribe(() => this.getProjects());
+
   }
 
   clear(){
     this.projecttoinsert = new ProjectDTO();
+  }
+
+  getuserid(){
+    this.userid = JSON.parse(localStorage.getItem('currentUser')).id;
   }
 }
