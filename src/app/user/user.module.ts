@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { UserRoutingModule } from './user-routing.module';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 /**
  * Modulo dell'user, qui vengono dichiarate le component che utilizza 
@@ -11,7 +12,7 @@ import { ProjectsComponent } from './projects/projects.component';
  **/
 
 @NgModule({
-    declarations: [UserDashboardComponent,ProjectsComponent],
+    declarations: [UserDashboardComponent,ProjectsComponent, EditProfileComponent],
     imports: [
       CommonModule,
       UserRoutingModule,
