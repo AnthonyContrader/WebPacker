@@ -42,9 +42,10 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/login']);
         }
       }
-    }, undefined, ()=>{
-      alert("L'UTENTE NON ESISTE, EFFETTUA LA REGISTRAZIONE");
-    });
+      else{
+        alert("Username o password errati, riprova o effettua la registrazione se è la tua prima volta");
+      }
+    }, undefined);
   }
 
   signup(f: NgForm): void{
@@ -60,7 +61,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('currentUser', JSON.stringify(this.newUser));
         
         this.service.insert(this.newUser).subscribe(()=>{
-          alert("REGISTRAZIONE EFFETTUATA, ORA FAI IL LOGIN");
+          alert("Registrazione effetuata, ora puoi effettuare il login");
         });
         
       }
