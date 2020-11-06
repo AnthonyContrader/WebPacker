@@ -58,12 +58,24 @@ export class LoginComponent implements OnInit {
         this.newUser.password = this.loginDTO.password;
         this.newUser.usertype = Usertype.USER;
 
+        /*
+        - Faccio un controllo sull'username
+        - Creo una funzione di read nel user.service
+        - Creo una funzione di read nell'user controller di spring (METODO GET)
+        - Eseguo la read sul database e ritorno un valore String.
+        - Se la stringa è nulla, creo effettivamente il mio utente
+        - Se la stringa ritorna un valore, non faccio niente, ritorno al login (mando un alert)
+        */
+
         localStorage.setItem('currentUser', JSON.stringify(this.newUser));
         
         this.service.insert(this.newUser).subscribe(()=>{
           alert("Registrazione effetuata, ora puoi effettuare il login");
         });
         
+      }
+      else{
+        alert("Username & password già esistenti");
       }
     });
 

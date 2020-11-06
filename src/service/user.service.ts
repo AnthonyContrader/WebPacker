@@ -28,4 +28,6 @@ export class UserService extends AbstractService<UserDTO>{
     return this.http.post<any>('http://localhost:8080/' + this.type + '/login', loginDTO)
   }
 
+  //funzione di read per leggere un username dal database, parametro logindto, ritorna un observable<string>
+
 }
