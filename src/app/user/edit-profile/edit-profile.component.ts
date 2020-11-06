@@ -54,7 +54,12 @@ export class EditProfileComponent implements OnInit {
     },
     undefined, () => {
       if(this.yesprojects == true){
-        alert("Progetti utente cancellati, ora puoi cancellare l'utente");
+
+        this.service.delete(user.id).subscribe( () => {
+
+          this.router.navigate(['/login']);
+        });
+        alert("Utente cancellato, tornerai alla pagina di Login");
         this.yesprojects = false;
       }
     } );

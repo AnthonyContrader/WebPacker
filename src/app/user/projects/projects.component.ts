@@ -57,10 +57,9 @@ export class ProjectsComponent implements OnInit {
   insert(project: ProjectDTO) {
 
     project.projectid = 0;
-
     project.userid = this.userid;
-    
     this.service.insert(project).subscribe(() => this.getProjects());
+    this.clear();
 
   }
 

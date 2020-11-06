@@ -31,15 +31,7 @@ this.getuser();
     window.location.reload();
   }
 
-  delete(user:UserDTO){
-    this.deleteAll(user);
-    this.service.delete(user.id).subscribe( () => {
-
-      this.router.navigate(['/login']);
-    });
-
-
-  }
+ 
 
   getuser(){
     this.user = JSON.parse(localStorage.getItem('currentUser'));
@@ -62,7 +54,12 @@ this.getuser();
     },
     undefined, () => {
       if(this.yesprojects == true){
-        alert("Progetti utente cancellati, ora puoi cancellare l'utente");
+
+        this.service.delete(user.id).subscribe( () => {
+
+          this.router.navigate(['/login']);
+        });
+        alert("Utente cancellato, tornerai alla pagina di Login");
         this.yesprojects = false;
       }
     } );

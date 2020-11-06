@@ -36,6 +36,7 @@ export class UsersComponent implements OnInit {
 
   insert(user: UserDTO) {
     this.service.insert(user).subscribe(() => this.getUsers());
+    this.clear();
   }
 
   clear(){
@@ -58,8 +59,11 @@ export class UsersComponent implements OnInit {
       )
     },
     undefined, () => {
+
+      
       if(this.yesprojects == true){
         alert("Progetti utente cancellati, ora puoi cancellare l'utente");
+        this.service.delete(user.id).subscribe(() => this.getUsers());
         this.yesprojects = false;
       }
     } );
