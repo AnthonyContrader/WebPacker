@@ -7,10 +7,13 @@
   
     
       <p><label>Password:</label><input [(ngModel)]="user.password"></p>
+
+     
+
     
     
     
-      <button (click)="update(user)">Edit</button>
+      <button (click)="update(user,userdata)">Edit</button>
       <br>
 
       <button (click)="deleteAll(user)">Delete Account</button>

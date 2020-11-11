@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { UserDTO } from 'src/dto/userdto';
 import { ProjectService } from 'src/service/project.service';
 import { UserService } from 'src/service/user.service';
+import {UserDataDTO} from 'src/dto/userdatadto';
+import {UserDataService} from 'src/service/userdata.service';
 
 
 @Component({
@@ -14,8 +16,10 @@ import { UserService } from 'src/service/user.service';
 export class EditProfileComponent implements OnInit {
 
   user : UserDTO;
+  userdata : UserDataDTO;
   yesprojects: boolean = false;
-  constructor(private service: UserService, private psget : ProjectService, private psdelete: ProjectService,private router : Router) { 
+  constructor(private service: UserService, private psget : ProjectService, 
+    private psdelete: ProjectService,private router : Router) { 
     
   }
 
@@ -24,8 +28,10 @@ this.getuser();
     
   }
 
-  update(user: UserDTO) {
+  update(user: UserDTO, userdata : UserDataDTO) {
 
+   
+    
     localStorage.setItem('currentUser', JSON.stringify(user));
     this.service.update(user).subscribe(() => this.getuser());
     window.location.reload();
@@ -35,6 +41,7 @@ this.getuser();
 
   getuser(){
     this.user = JSON.parse(localStorage.getItem('currentUser'));
+    
   }
 
   deleteAll(user: UserDTO){

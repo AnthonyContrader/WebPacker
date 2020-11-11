@@ -3,6 +3,8 @@ import { UserService } from 'src/service/user.service';
 import { UserDTO } from 'src/dto/userdto';
 import { ProjectService } from 'src/service/project.service';
 import { ProjectDTO } from 'src/dto/projectdto';
+import {UserDataDTO} from 'src/dto/userdatadto';
+import {UserDataService} from 'src/service/userdata.service';
 
 @Component({
   selector: 'app-users',
@@ -11,18 +13,23 @@ import { ProjectDTO } from 'src/dto/projectdto';
 })
 export class UsersComponent implements OnInit {
 
+  userdata : UserDataDTO = new UserDataDTO();
   users: UserDTO[];
   usertoinsert: UserDTO = new UserDTO();
   yesprojects: boolean = false;
+  temp : UserDTO;
 
-  constructor(private service: UserService, private psget: ProjectService, private psdelete: ProjectService) { }
+  constructor(private service: UserService, private psget: ProjectService, 
+    private psdelete: ProjectService,private servicedata : UserDataService) { }
 
   ngOnInit() {
     this.getUsers();
   }
 
   getUsers() {
-    this.service.getAll().subscribe(users => this.users = users);
+    
+    this.service.getAll().subscribe(users => this.users = users);    
+    
   }
 
   delete(user: UserDTO) {
@@ -35,7 +42,9 @@ export class UsersComponent implements OnInit {
   }
 
   insert(user: UserDTO) {
-    this.service.insert(user).subscribe(() => this.getUsers());
+    
+    this.service.insert(user).subscribe( () => this.getUsers());
+    
     this.clear();
   }
 
@@ -65,6 +74,8 @@ export class UsersComponent implements OnInit {
         alert("Progetti utente cancellati, ora puoi cancellare l'utente");
         this.service.delete(user.id).subscribe(() => this.getUsers());
         this.yesprojects = false;
+      } else{
+        this.service.delete(user.id).subscribe(() => this.getUsers());
       }
     } );
   }

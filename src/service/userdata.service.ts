@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UserdataService extends  AbstractService<UserDataDTO> {
+export class UserDataService extends  AbstractService<UserDataDTO> {
 
   constructor(http: HttpClient) {
     super(http);
