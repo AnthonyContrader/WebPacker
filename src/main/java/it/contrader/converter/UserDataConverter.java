@@ -13,6 +13,7 @@ import it.contrader.model.UserData;
  *@see AbstractConverter
  *@see Converter
  */
+@Component
 public class UserDataConverter extends AbstractConverter<UserData,UserDataDTO> {
 	
 	@Override
@@ -33,7 +34,7 @@ public class UserDataConverter extends AbstractConverter<UserData,UserDataDTO> {
 		if (userdata != null) {
 			userdataDTO = new UserDataDTO(
 					userdata.getUserid(),userdata.getFirstname(),userdata.getLastname(),
-					userdata.getTelephone(),userdata.getEmail(),userdata.getNationality()
+					userdata.getTelephone(),userdata.getEmail(),userdata.getNazionality()
 					);
 			
 		}

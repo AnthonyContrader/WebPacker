@@ -1,9 +1,7 @@
 package it.contrader.service;
 
 import org.springframework.stereotype.Service;
-
-import it.contrader.dao.ProjectRepository;
-import it.contrader.dto.ProjectDTO;
+import it.contrader.dao.UserDataRepository;
 import it.contrader.dto.UserDataDTO;
 import it.contrader.model.UserData;
 
