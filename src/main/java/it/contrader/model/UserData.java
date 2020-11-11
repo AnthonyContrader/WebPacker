@@ -14,13 +14,18 @@ import lombok.NoArgsConstructor;
 public class UserData {
 	
 	@Id
-	@Column(unique = true)
 	private long userid;
 	
+	@Column(unique = true)
+	
 	private String firstname;
+	
 	private String lastname;
+	
 	private long telephone;
+	
 	private String email;
+	
 	private String nazionality;
 
 	
