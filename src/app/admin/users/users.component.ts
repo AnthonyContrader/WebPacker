@@ -42,11 +42,13 @@ export class UsersComponent implements OnInit {
   }
 
   insert(user: UserDTO) {
-    
-    this.service.insert(user).subscribe( () => this.getUsers());
+
+    this.service.insert(user).subscribe(() => this.getUsers());
     
     this.clear();
   }
+  
+  
 
   clear(){
     this.usertoinsert = new UserDTO();

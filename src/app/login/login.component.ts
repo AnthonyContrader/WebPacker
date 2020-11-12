@@ -5,6 +5,7 @@ import { UserService } from 'src/service/user.service';
 import { Router } from '@angular/router';
 import { UserDTO } from 'src/dto/userdto';
 import { Usertype } from 'src/dto/usertype';
+import {UserDataDTO} from 'src/dto/userdatadto';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   loginDTO: LoginDTO;
   newUser: UserDTO = new UserDTO();
+  userdata : UserDataDTO = new UserDataDTO();
 
   constructor(private service: UserService, private router: Router) { }
 
@@ -28,6 +30,13 @@ export class LoginComponent implements OnInit {
 
       if (user != null) {
         localStorage.setItem('currentUser', JSON.stringify(user));
+this.userdata.userid = user.id;
+this.userdata.firstname = "ca"
+this.userdata.lastname = " po"
+this.userdata.telephone = 34
+this.userdata.email = "sf"
+this.userdata.nationality = "ita"
+localStorage.setItem('currentUserData', JSON.stringify(this.userdata));
 
         switch (user.usertype.toString()) {
           case 'ADMIN': {
@@ -70,7 +79,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('currentUser', JSON.stringify(this.newUser));
         
         this.service.insert(this.newUser).subscribe(()=>{
-          alert("Registrazione effetuata, ora puoi effettuare il login");
+          alert("Registrazione effettuata, ora puoi effettuare il login");
         });
         
       }

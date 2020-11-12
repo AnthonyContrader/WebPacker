@@ -8,11 +8,16 @@
     
       <p><label>Password:</label><input [(ngModel)]="user.password"></p>
 
+      <p><label >FirstName:</label><input placeholder="firstname"  [(ngModel)]="userdata.firstname"></p>
+      <p><label >LastName:</label><input placeholder="lastname" [(ngModel)]="userdata.lastname"></p>
+      <p><label >Telephone:</label><input placeholder="tel" [(ngModel)]="userdata.telephone"></p>
+      <p><label >Email:</label><input placeholder="mail" [(ngModel)]="userdata.email"></p>
+      <p><label >Nationality:</label><input placeholder="nazione" [(ngModel)]="userdata.nationality"></p>
      
 
     
-    
-    
+     
+      
       <button (click)="update(user,userdata)">Edit</button>
       <br>
 
