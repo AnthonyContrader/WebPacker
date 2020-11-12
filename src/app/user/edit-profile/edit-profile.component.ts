@@ -72,6 +72,7 @@ export class EditProfileComponent implements OnInit {
   }
   getuser(){
     this.user = JSON.parse(localStorage.getItem('currentUser'));
+    if( JSON.parse(localStorage.getItem('currentUserData')) != null)
     this.userdata = JSON.parse(localStorage.getItem('currentUserData'));
   }
 
@@ -91,6 +92,7 @@ export class EditProfileComponent implements OnInit {
       )
     },
     undefined, () => {
+     // this.servicedata.delete(user.id).subscribe();
       if(this.yesprojects == true){
 
         this.service.delete(user.id).subscribe( () => {

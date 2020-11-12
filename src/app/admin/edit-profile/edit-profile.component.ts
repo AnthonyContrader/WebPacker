@@ -43,7 +43,7 @@ console.log("prima" + this.userdata);
     this.readData(user, userdata)
     this.service.update(user).subscribe(() => this.getuser());
     console.log("getusfatta" + this.userdata);
-    window.location.reload();
+    //window.location.reload();
 
   }
 
@@ -75,8 +75,10 @@ console.log("prima" + this.userdata);
 
   getuser() {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
-   this.userdata = JSON.parse(localStorage.getItem('currentUserData'));
-
+    if( JSON.parse(localStorage.getItem('currentUserData')) != null)
+   this.userdata = JSON.parse(localStorage.getItem('currentUserData'));  
+    
+    
   }
 
   deleteAll(user: UserDTO) {
