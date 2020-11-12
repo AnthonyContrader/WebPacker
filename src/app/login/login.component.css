@@ -14,15 +14,16 @@ img{
 
 input, input:hover, input::selection, input:checked, input:focus{
     border: 0;
-    background-color: darkorange;
+    background-color: rgb(123, 27, 2);
     border-radius: 0;
     color: white;
     border-bottom: 1px solid crimson;
     margin: 0px; 
+    font-size: 20px;
 }
 
 .container-fluid{
-    background-color: darkorange;
+    background-color: rgb(123, 27, 2);
     height: 100vh;
 }
 input::placeholder{
@@ -30,14 +31,14 @@ input::placeholder{
 }
 .form-control{
 border: none;
-background-color: darkorange;
+background-color: rgb(123, 27, 2);
 color: white;
 border-bottom: 1px solid white;
 }
 
 .login{
 border: none;
-background-color: darkorange;
+background-color: rgb(123, 27, 2);
 color: white;
 border: 1px solid white;
 border-radius: 2px;
@@ -48,6 +49,9 @@ padding-left: auto;
 }
 
 p{
-font-size: 14px;
+font-size: 20px;
 color: white;
+}
+button{
+    font-size: 0.8vw;
 }
