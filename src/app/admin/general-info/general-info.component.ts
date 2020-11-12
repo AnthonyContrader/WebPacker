@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserDataDTO } from 'src/dto/userdatadto';
 import { UserDTO } from 'src/dto/userdto';
 
 @Component({
@@ -9,10 +10,12 @@ import { UserDTO } from 'src/dto/userdto';
 export class GeneralInfoComponent implements OnInit {
 
   user : UserDTO;
+  userdata: UserDataDTO;
   constructor() { }
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
-  }
+    if( JSON.parse(localStorage.getItem('currentUserData')) != null)
+   this.userdata = JSON.parse(localStorage.getItem('currentUserData'));  }
 
 }

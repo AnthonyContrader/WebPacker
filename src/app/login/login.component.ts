@@ -84,7 +84,7 @@ localStorage.setItem('currentUserData', JSON.stringify(this.userdata));
         - Se la stringa è nulla, creo effettivamente il mio utente
         - Se la stringa ritorna un valore, non faccio niente, ritorno al login (mando un alert)
         */
-
+localStorage.clear();
         localStorage.setItem('currentUser', JSON.stringify(this.newUser));
         
         this.service.insert(this.newUser).subscribe(()=>{

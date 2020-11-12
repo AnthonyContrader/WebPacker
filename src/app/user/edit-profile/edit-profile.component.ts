@@ -15,7 +15,6 @@ export class EditProfileComponent implements OnInit {
 
   user : UserDTO;
   userdata: UserDataDTO = new UserDataDTO();
-  yesprojects: boolean = false;
   userdatas: UserDataDTO[];
   yesdata: boolean = false;
 
@@ -33,18 +32,19 @@ export class EditProfileComponent implements OnInit {
     userdata.userid = this.user.id;
     localStorage.setItem('currentUserData', JSON.stringify(userdata))
     this.readData(user, userdata)
-    this.service.update(user).subscribe(() => this.getuser());
-    window.location.reload();
-    console.log(this.userdata);
+    this.service.update(user).subscribe(
+      () => this.getuser()
+      ,undefined,()=>
+      
+      alert("Modifiche effettuate")
+      );
+
   }
 
   readData(user: UserDTO, userdata: UserDataDTO) {
 
-
     this.servicedata.getAll().subscribe(datas => {
-
       datas.forEach(d => {
-
         if (d.userid == user.id) {
           this.dataup.update(userdata).subscribe();
           this.yesdata = true;
@@ -52,7 +52,6 @@ export class EditProfileComponent implements OnInit {
       }
       );
     }, undefined, () => {
-
       if (this.yesdata == false) {
         this.datain.insert(userdata).subscribe();
       }
@@ -64,9 +63,8 @@ export class EditProfileComponent implements OnInit {
 
 
   delete(user:UserDTO){
-    this.deleteAll(user);
+    this.deleteAll(user);   
     this.service.delete(user.id).subscribe( () => {
-
       this.router.navigate(['/login']);
     });
   }
@@ -77,31 +75,22 @@ export class EditProfileComponent implements OnInit {
   }
 
   deleteAll(user: UserDTO){
-
+    this.servicedata.delete(user.id).subscribe();
     this.psget.getAll().subscribe(projects =>{
-
       projects.forEach(p =>{
-
         if (user.id == p.userid){
-          if(this.yesprojects == false){
-            this.yesprojects = true;
-          }
+         
           this.psdelete.delete(p.projectid).subscribe();
         }
        }
       )
     },
-    undefined, () => {
-     // this.servicedata.delete(user.id).subscribe();
-      if(this.yesprojects == true){
-
+    undefined, () => {  
         this.service.delete(user.id).subscribe( () => {
-
           this.router.navigate(['/login']);
         });
         alert("Utente cancellato, tornerai alla pagina di Login");
-        this.yesprojects = false;
-      }
+      
     } );
   }
 
