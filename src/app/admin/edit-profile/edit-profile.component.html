@@ -1,27 +1,59 @@
+<div class="container">
+     <h1><strong>EDIT PROFILE</strong></h1>
+     <div class="row mt-5">
+          <div class="col-md-0">
+          </div>
+          <div class="col-md-11">
+               <table>
 
+                    <tr>
+                         <td>
+                              <label> Username: </label><input [(ngModel)]="user.username">
+                         </td>
 
+                         <td>
 
+                              <label>Password:</label><input [(ngModel)]="user.password">
+                         </td>
+                    </tr>
 
-  
-     <p><label> Username:</label><input [(ngModel)]="user.username"></p>
-  
-    
-      <p><label>Password:</label><input [(ngModel)]="user.password"></p>
+                    <tr>
+                         <td>
 
-      <p><label >FirstName:</label><input placeholder="firstname"  [(ngModel)]="userdata.firstname"></p>
-      <p><label >LastName:</label><input placeholder="lastname" [(ngModel)]="userdata.lastname"></p>
-      <p><label >Telephone:</label><input placeholder="tel" [(ngModel)]="userdata.telephone"></p>
-      <p><label >Email:</label><input placeholder="mail" [(ngModel)]="userdata.email"></p>
-      <p><label >Nationality:</label><input placeholder="nazione" [(ngModel)]="userdata.nationality"></p>
-     
+                              <label>FirstName: </label><input placeholder="firstname" [(ngModel)]="userdata.firstname">
+                         </td>
 
-    
-     
-      
-      <button (click)="update(user,userdata)">Edit</button>
-      <br>
+                         <td>
+                              <label>LastName: </label><input placeholder="lastname" [(ngModel)]="userdata.lastname">
+                         </td>
+                    </tr>
 
-      <button (click)="deleteAll(user)">Delete Account</button>
-  
+                    <tr>
+                         <td>
+                              <label>Email: </label><input placeholder="email" [(ngModel)]="userdata.email">
+                         </td>
 
+                         <td>
+                              <label>Nationality: </label><br><select placeholder="nazione"
+                                   [(ngModel)]="userdata.nationality">
+                                   <option value="Italian" selected>Italian</option>
+                                   <option value="English">English</option>
+                                   <option value="French">French</option>
+                                   <option value="German">German</option>
+                                   <option value="Russian">Russian</option>
+                                   <option value="Japanese">Japanese</option>
+                              </select>
 
+                         </td>
+                    </tr>
+                    <div class="pulsanti">
+                         <button (click)="update(user,userdata)">Edit</button>
+                         <button (click)="deleteAll(user)">Delete Account</button>
+                    </div>
+               </table>
+          </div>
+
+     </div>
+     <div class="col-md-1">
+     </div>
+</div>
