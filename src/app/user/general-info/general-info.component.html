@@ -1,15 +1,66 @@
+<div class="container">
+      <h1><strong>EDIT PROFILE</strong></h1>
+      <div class="row mt-5">
+            <div class="col-md-0">
+            </div>
+            <div class="col-md-11">
+                  <table>
 
+                        <tr>
+                              <td>
+                                    <label>Id:</label><input [(ngModel)]="user.id" readonly="readonly">
+                              </td>
 
-<p><label>Id:</label><input [(ngModel)]="user.id" readonly="readonly"></p>
-<p><label> Username:</label><input [(ngModel)]="user.username" readonly="readonly"></p>
-  
-    
-<p><label>Password:</label><input [(ngModel)]="user.password" readonly="readonly"></p>
+                              <td>
 
-<p><label>UserType:</label><input [(ngModel)]="user.usertype" readonly="readonly"></p>
-<p><label>UserType:</label><input [(ngModel)]="user.usertype" readonly="readonly"></p>
-<p><label >FirstName:</label><input placeholder="firstname"  [(ngModel)]="userdata.firstname"  readonly="readonly"></p>
-      <p><label >LastName:</label><input placeholder="lastname" [(ngModel)]="userdata.lastname"  readonly="readonly"></p>
-      <p><label >Telephone:</label><input placeholder="tel" [(ngModel)]="userdata.telephone"  readonly="readonly"></p>
-      <p><label >Email:</label><input placeholder="mail" [(ngModel)]="userdata.email"  readonly="readonly"></p>
-      <p><label >Nationality:</label><input placeholder="nazione" [(ngModel)]="userdata.nationality"  readonly="readonly"></p>
+                                    <label> Username:</label><input [(ngModel)]="user.username" readonly="readonly">
+                              </td>
+                        </tr>
+
+                        <tr>
+                              <td>
+
+                                    <label>Password:</label><input [(ngModel)]="user.password" readonly="readonly">
+                              </td>
+
+                              <td>
+                                    <label>UserType:</label><input [(ngModel)]="user.usertype" readonly="readonly">
+                              </td>
+                        </tr>
+
+                        <tr>
+                              <td>
+                                    <label>FirstName:</label><input placeholder="firstname"
+                                          [(ngModel)]="userdata.firstname" readonly="readonly">
+                              </td>
+
+                              <td>
+                                    <label>LastName:</label><input placeholder="lastname"
+                                          [(ngModel)]="userdata.lastname" readonly="readonly">
+
+                              </td>
+                        </tr>
+                        <tr>
+                              <td>
+                                    <label>Telephone:</label><input placeholder="tel" [(ngModel)]="userdata.telephone"
+                                          readonly="readonly">
+
+                              </td>
+                              <td>
+                                    <label>Email:</label><input placeholder="mail" [(ngModel)]="userdata.email"
+                                          readonly="readonly">
+
+                              </td>
+                        </tr>
+                        <tr>
+                              <td colspan="2">
+                                    <label>Nationality:</label><br><input placeholder="nazione" [(ngModel)]="userdata.nationality" readonly="readonly">
+                              </td>
+                        </tr>
+                  </table>
+            </div>
+
+      </div>
+      <div class="col-md-1">
+      </div>
+</div>

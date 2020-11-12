@@ -1,0 +1,35 @@
+input{
+    font-size: 160%;
+}
+label{
+    font-size: 160%;
+}
+button{
+    margin: 5px;
+    font-size: 160%;
+}
+.pulsanti{
+    position: relative;
+    left: 70%;
+    font-size: 150%;
+
+}
+table{
+    width: 50%;
+}
+h1{
+    text-align: center;
+    font-size: 2vw;
+}
+th, td {
+	text-align: center;
+	padding: 2px;
+}
+
+td{
+    font-size: 16px;
+}
+select{
+    font-size: 180%;
+    width: 100%;
+}
