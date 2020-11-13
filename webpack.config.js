@@ -14,7 +14,7 @@ var webpackConfig = {
   module: {
     rules: [{
       test: /\.ts$/,
-      use: ['ts-loader', 'angular2-template-loader']
+      use: ['awesome-typescript-loader', 'angular2-template-loader']
     },
     {
       test: /\.html$/,
@@ -32,9 +32,10 @@ var webpackConfig = {
     },
     ]
   },
-  // devServer: {
-  //   writeToDisk: true
-  // },
+  devServer: {
+  //writeToDisk: true,
+  port: 4200
+  },
 };
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: './src/index.html',
