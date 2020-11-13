@@ -16,9 +16,6 @@
                         Projectname
                     </th>
                     <th>
-                        Seleziona
-                    </th>
-                    <th>
                         Edit
                     </th>
                     <th>
@@ -36,9 +33,6 @@
                         <input placeholder="projectname" [(ngModel)]="projectinsert.projectname">
                     </td>
                     <td>
-                        <input type="file" >
-                    </td>
-                    <td>
                         <button (click)="insert(projectinsert)">Insert</button>
                     </td>
                     <td>
@@ -54,9 +48,6 @@
                     </td>
                     <td>
                         <input [(ngModel)]="project.projectname">
-                    </td>
-                    <td>
-                      
                     </td>
                     <td>
                         <button (click)=update(project)>Save</button>

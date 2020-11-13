@@ -40,9 +40,12 @@ input, select{
 }
 
 input:hover,  input:active, input:focus{
-    border: 2px solid crimson;
+    border: 2px solid rgb(190,27, 2);;
 }
 
 button:hover{
-    background-color: crimson;
+    background-color: rgb(190,27, 2);;
+}
+button{
+	width: 80%;
 }

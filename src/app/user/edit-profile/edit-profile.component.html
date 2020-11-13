@@ -5,10 +5,9 @@
           </div>
           <div class="col-md-11">
                <table>
-
                     <tr>
                          <td>
-                              <label> Username:</label><input [(ngModel)]="user.username">
+                              <label>Username:</label><input [(ngModel)]="user.username">
                          </td>
                          <td>
                               <label>Password:</label><input [(ngModel)]="user.password">
@@ -16,18 +15,22 @@
                     </tr>
                     <tr>
                          <td>
-                              <label>FirstName:</label><input placeholder="firstname" [(ngModel)]="userdata.firstname">
+                              <label>First Name:</label><input placeholder="firstname" [(ngModel)]="userdata.firstname">
                          </td>
-
                          <td>
-                              <label>LastName: </label><input placeholder="lastname" [(ngModel)]="userdata.lastname">
+                              <label>Last Name: </label><input placeholder="lastname" [(ngModel)]="userdata.lastname">
                          </td>
                     </tr>
                     <tr>
                          <td>
-                              <label>Email: </label><input placeholder="mail" [(ngModel)]="userdata.email">
+                              <label>Telephone: </label><input placeholder="telephone" [(ngModel)]="userdata.telephone">
                          </td>
                          <td>
+                              <label>Email: </label><input placeholder="mail" [(ngModel)]="userdata.email">
+                         </td>
+                    </tr>
+                    <tr>
+                         <td colspan="2">
                               <label>Nationality: </label><br><select placeholder="nazione"
                                    [(ngModel)]="userdata.nationality">
                                    <option value="Italian" selected>Italian</option>
@@ -43,11 +46,8 @@
                          <button (click)="update(user,userdata)">Edit</button>
                          <button (click)="deleteAll(user)">Delete Account</button>
                     </div>
-
-
                </table>
           </div>
-
      </div>
      <div class="col-md-1">
      </div>

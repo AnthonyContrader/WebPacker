@@ -5,45 +5,41 @@
           </div>
           <div class="col-md-11">
                <table>
-
                     <tr>
                          <td>
-                              <label> Username: </label><input [(ngModel)]="user.username">
+                              <label>Username: </label><input [(ngModel)]="user.username">
                          </td>
-
                          <td>
-
                               <label>Password:</label><input [(ngModel)]="user.password">
                          </td>
                     </tr>
-
                     <tr>
                          <td>
-
-                              <label>FirstName: </label><input placeholder="firstname" [(ngModel)]="userdata.firstname">
+                              <label>First Name: </label><input placeholder="firstname" [(ngModel)]="userdata.firstname">
                          </td>
-
                          <td>
-                              <label>LastName: </label><input placeholder="lastname" [(ngModel)]="userdata.lastname">
+                              <label>Last Name: </label><input placeholder="lastname" [(ngModel)]="userdata.lastname">
                          </td>
                     </tr>
-
                     <tr>
+                         <td>
+                              <label>Telephone: </label><input placeholder="telephone" [(ngModel)]="userdata.telephone">
+                         </td>
                          <td>
                               <label>Email: </label><input placeholder="email" [(ngModel)]="userdata.email">
                          </td>
-
-                         <td>
+                    </tr>
+                    <tr>
+                         <td colspan="2">
                               <label>Nationality: </label><br><select placeholder="nazione"
-                                   [(ngModel)]="userdata.nationality">
-                                   <option value="Italian" selected>Italian</option>
-                                   <option value="English">English</option>
-                                   <option value="French">French</option>
-                                   <option value="German">German</option>
-                                   <option value="Russian">Russian</option>
-                                   <option value="Japanese">Japanese</option>
-                              </select>
-
+                              [(ngModel)]="userdata.nationality">
+                              <option value="Italian" selected>Italian</option>
+                              <option value="English">English</option>
+                              <option value="French">French</option>
+                              <option value="German">German</option>
+                              <option value="Russian">Russian</option>
+                              <option value="Japanese">Japanese</option>
+                         </select> 
                          </td>
                     </tr>
                     <div class="pulsanti">
