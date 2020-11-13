@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginDTO } from 'src/dto/logindto';
+import { LoginDTO } from '../../dto/logindto';
 import { NgForm } from '@angular/forms';
-import { UserService } from 'src/service/user.service';
+import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
-import { UserDTO } from 'src/dto/userdto';
-import { Usertype } from 'src/dto/usertype';
-import {UserDataDTO} from 'src/dto/userdatadto';
-import {UserDataService} from 'src/service/userdata.service';
+import { UserDTO } from '../../dto/userdto';
+import { Usertype } from '../../dto/usertype';
+import {UserDataDTO} from '../../dto/userdatadto';
+import {UserDataService} from '../../service/userdata.service';
 
 @Component({
   selector: 'app-login',

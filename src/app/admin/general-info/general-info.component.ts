@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDataDTO } from 'src/dto/userdatadto';
-import { UserDTO } from 'src/dto/userdto';
+import { UserDataDTO } from '../../../dto/userdatadto';
+import { UserDTO } from '../../../dto/userdto';
 
 @Component({
   selector: 'app-general-info',

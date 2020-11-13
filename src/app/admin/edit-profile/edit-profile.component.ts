@@ -1,11 +1,11 @@
 import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserDTO } from 'src/dto/userdto';
-import { ProjectService } from 'src/service/project.service';
-import { UserService } from 'src/service/user.service';
-import { UserDataDTO } from 'src/dto/userdatadto';
-import { UserDataService } from 'src/service/userdata.service';
+import { UserDTO } from '../../../dto/userdto';
+import { ProjectService } from '../../../service/project.service';
+import { UserService } from '../../../service/user.service';
+import { UserDataDTO } from '../../../dto/userdatadto';
+import { UserDataService } from '../../../service/userdata.service';
 
 
 @Component({

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDTO } from 'src/dto/userdto';
-import { UserService } from 'src/service/user.service';
+import { UserDTO } from '../../../dto/userdto';
+import { UserService } from '../../../service/user.service';
 import { Router } from '@angular/router';
-import { ProjectService } from 'src/service/project.service';
-import { UserDataDTO } from 'src/dto/userdatadto';
-import { UserDataService } from 'src/service/userdata.service';
+import { ProjectService } from '../../../service/project.service';
+import { UserDataDTO } from '../../../dto/userdatadto';
+import { UserDataService } from '../../../service/userdata.service';
 
 @Component({
   selector: 'app-edit-profile',

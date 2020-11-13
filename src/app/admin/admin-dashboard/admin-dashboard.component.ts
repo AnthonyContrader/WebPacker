@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDTO } from 'src/dto/userdto';
+import { UserDTO } from '../../../dto/userdto';
 
 /**
  * Componente della dashboard admin. Nell'ngOnInit recupera

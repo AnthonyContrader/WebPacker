@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './users/users.component';
-import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { GeneralInfoComponent } from './general-info/general-info.component';
@@ -18,7 +17,7 @@ import { GeneralInfoComponent } from './general-info/general-info.component';
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, ProjectsComponent, EditProfileComponent, GeneralInfoComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, ProjectsComponent, EditProfileComponent, GeneralInfoComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
