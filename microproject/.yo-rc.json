@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "it.contrader.microproject"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "microservice",
+    "baseName": "microproject",
+    "packageName": "it.contrader.microproject",
+    "packageFolder": "it/contrader/microproject",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "consul",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NzZiODc0NTU0YmFjY2VhYjFkM2FkM2Y0NGViMWUyOGQ5OGQ4NDI3YzAyMjE4YzE1YmVmNGZkMDA0MzRlMmViYjhjNWFhYzAzN2RlZTI0Mjc5OWI5MWZkODFiNjEwNTBhNjNmZjczYjYwMWE0YmNiZWFlNDM4MTU0YzE5NDgxZjA=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1605774355251,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
