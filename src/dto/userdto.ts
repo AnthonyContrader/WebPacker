@@ -12,11 +12,13 @@ export class UserDTO {
 
    id: number;
 
-   username: string;
+   login: string;
 
    password: string;
+   email: string;
 
-   usertype: Usertype;
+
+   authorities: string[] = [];
 
 }
 

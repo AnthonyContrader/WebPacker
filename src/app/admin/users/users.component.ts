@@ -18,6 +18,7 @@ export class UsersComponent implements OnInit {
   usertoinsert: UserDTO = new UserDTO();
   yesprojects: boolean = false;
   temp : UserDTO;
+  tipoutente : string;
 
   constructor(private service: UserService, private psget: ProjectService, 
     private psdelete: ProjectService,private servicedata : UserDataService) { }
@@ -42,7 +43,12 @@ export class UsersComponent implements OnInit {
   }
 
   insert(user: UserDTO) {
-
+    
+    console.log(this.usertoinsert);
+    if( this.tipoutente == "ROLE_ADMIN")
+    user.authorities.push("ROLE_USER");
+    user.authorities.push(this.tipoutente);
+    
     this.service.insert(user).subscribe(() => this.getUsers());
     
     this.clear();

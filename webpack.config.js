@@ -34,6 +34,7 @@ var webpackConfig = {
   },
   devServer: {
   //writeToDisk: true,
+  //contentBase: './dist',
   port: 4200
   },
 };
