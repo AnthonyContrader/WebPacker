@@ -19,12 +19,15 @@ export class UsersComponent implements OnInit {
   yesprojects: boolean = false;
   temp : UserDTO;
   tipoutente : string;
+  temp1 : string;
 
   constructor(private service: UserService, private psget: ProjectService, 
     private psdelete: ProjectService,private servicedata : UserDataService) { }
 
   ngOnInit() {
     this.getUsers();
+    this.temp1 = "7m39msOTqq44IJjfyRMg";
+    this.service.activate(this.temp1).subscribe();
   }
 
   getUsers() {
@@ -34,8 +37,8 @@ export class UsersComponent implements OnInit {
   }
 
   delete(user: UserDTO) {
-    this.deleteAll(user);
-    this.service.delete(user.id).subscribe(() => this.getUsers());
+   // this.deleteAll(user);
+    this.service.deleteU(user.login).subscribe(() => this.getUsers());
   }
 
   update(user: UserDTO) {
@@ -54,6 +57,7 @@ export class UsersComponent implements OnInit {
     this.clear();
   }
   
+ 
   
 
   clear(){

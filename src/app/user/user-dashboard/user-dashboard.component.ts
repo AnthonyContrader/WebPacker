@@ -13,7 +13,7 @@ export class UserDashboardComponent implements OnInit {
 
   
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('currentUser'));
+    this.user = JSON.parse(localStorage.getItem('AUTOKEN'));
   }
 
 }

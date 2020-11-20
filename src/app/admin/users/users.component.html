@@ -7,14 +7,16 @@
       <table>
         <tr>
           <th>
-            Username
+            Login
           </th>
           <th>
-            Password
+            Email
           </th>
+          <th></th>
           <th>
             Usertype
           </th>
+          
           <th>
             Edit
           </th>
@@ -29,12 +31,14 @@
           <td>
             <input placeholder="password" [(ngModel)]="usertoinsert.email">
           </td>
+          <td></td>
           <td>
             <select placeholder="usertype" [(ngModel)]="tipoutente">
               <option value="ROLE_ADMIN">ADMIN</option>
               <option value="ROLE_USER">USER</option>
             </select>
           </td>
+          
           <td>
             <button (click)="insert(usertoinsert)">Insert</button>
           </td>
@@ -49,6 +53,7 @@
           <td>
             <input [(ngModel)]="user.email">
           </td>
+          <td></td>
           <td>
             <input [(ngModel)] = "user.authorities">
             
@@ -57,7 +62,7 @@
             <button (click)=update(user)>Save</button>
           </td>
           <td>
-            <button (click)="deleteAll(user)">Delete</button>
+            <button (click)="delete(user)">Delete</button>
           </td>
         </tr>
       </table>

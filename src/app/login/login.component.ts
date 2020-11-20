@@ -27,13 +27,16 @@ export class LoginComponent implements OnInit {
 
     this.service.login(this.loginDTO).subscribe((token : any) => {
       
+      //localStorage.setItem("AUTOKEN", JSON.stringify({ "authorities": token.id_token }));
       localStorage.setItem("AUTOKEN", JSON.stringify({ "authorities": token.id_token }));
-      localStorage.setItem("currentUser", JSON.stringify({ "authorities": token.id_token }));
+      
+      
       this.service.userLogged(this.loginDTO.username).subscribe((user:UserDTO)=>{
-
+        
       if (user != null) {
-        localStorage.setItem('AUTOKEN', JSON.stringify(user));
-        console.log("Ciao " + user.authorities);
+        
+        localStorage.setItem("currentUser", JSON.stringify(user));
+       
         if(user.authorities.indexOf("ROLE_USER") != -1 &&  user.authorities.indexOf("ROLE_ADMIN") != -1 ) {
           this.router.navigate(['/admin-dashboard']);
         }
@@ -46,5 +49,11 @@ export class LoginComponent implements OnInit {
         }
       });
     });
+    }
+
+    signup() :void{
+
+      this.router.navigate(['/register']);
+
     }
 }

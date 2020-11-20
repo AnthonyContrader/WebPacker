@@ -18,6 +18,8 @@ export class HeaderComponent implements OnInit {
 
   getuser(){
     this.user = JSON.parse(localStorage.getItem('currentUser'));
+    if ( this.user.authorities.indexOf("ROLE_ADMIN") != -1 )
+    this.user.authorities = [ "ROLE_ADMIN"];
   }
 
 }

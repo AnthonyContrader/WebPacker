@@ -24,8 +24,9 @@ export class UserService extends AbstractUService<UserDTO>{
     this.type ='users';
    this.port = '8080';
 }
+
 auth() {
-  const user = JSON.parse(localStorage.getItem('currentUser')) as UserDTO;
+  const user = JSON.parse(localStorage.getItem('AUTOKEN')) as UserDTO;
   if (user) {
     return 'Bearer ' + user.authorities;
   } else {
@@ -38,7 +39,7 @@ login(loginDTO: LoginDTO): Observable<UserDTO> {
 }
 
 userLogged(username: string) {
- // console.log('qua: ', this.auth());
+ 
   console.log(this.auth());
   return this.http.get('http://localhost:8080/api/users/' + username, {
    
@@ -48,4 +49,22 @@ userLogged(username: string) {
   });
 }
 
+register(dto: UserDTO): Observable<any> {
+
+  return this.http.post<UserDTO>('http://localhost:8080/api/register',dto, {
+  headers: {
+    Authorization: this.auth()
+  }
+});
+    
+}
+  
+activate(activationkey : string) {
+
+   return this.http.get('http://localhost:8080/api/activate?key='+activationkey );
+      
+  }
+
+
+  
 }
